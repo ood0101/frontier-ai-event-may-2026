@@ -1,1669 +1,1484 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frontier AI Researchers — May 2026 Event Roster</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontier AI Event — May 2026 — Roster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    :root {
-      --bg: #f2ede4;
-      --paper: #fffdf9;
-      --surface: #fffdfa;
-      --ink: #211a14;
-      --ink-soft: #3a2d22;
-      --muted: #6e6358;
-      --line: #e5d7c9;
-      --brand: #9d4b18;
-      --brand-2: #f29e56;
-      --brand-soft: #fff1e5;
-      --brand-ink: #7e2e07;
-      --sky: #e9f2ff;
-      --sky-ink: #165085;
-      --green: #1f7a4a;
-      --green-soft: #e7f9eb;
-      --green-ink: #155a38;
-      --amber: #a16a09;
-      --amber-soft: #fff3d6;
-      --amber-ink: #6b4304;
-      --red: #ad3329;
-      --red-soft: #ffe3df;
-      --red-ink: #832117;
-      --shadow: 0 10px 30px rgba(27, 18, 8, 0.07);
-      --shadow-sm: 0 4px 12px rgba(27, 18, 8, 0.05);
-      --radius: 18px;
-      --radius-sm: 12px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 4% 4%, #ffe2cc 0%, transparent 28%),
-        radial-gradient(circle at 100% 0%, #e9f2ff 0%, transparent 30%),
-        radial-gradient(circle at 90% 100%, #ffeacb 0%, transparent 26%),
-        var(--bg);
-      line-height: 1.55;
-      font-weight: 500;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 28px 20px 80px;
-    }
-
-    /* HEADER */
-    .masthead {
-      border: 1px solid var(--line);
-      background: rgba(255, 252, 248, 0.86);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px 24px;
-      margin-bottom: 22px;
-    }
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.74rem;
-      font-weight: 800;
-      color: var(--brand);
-      margin: 0 0 6px;
-    }
-    h1.title {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 700;
-      font-size: 2.3rem;
-      line-height: 1.05;
-      margin: 0 0 8px;
-      color: var(--ink);
-    }
-    .subtitle {
-      color: var(--muted);
-      font-size: 1.02rem;
-      margin: 0 0 14px;
-      max-width: 820px;
-    }
-    .metric-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-    .metric {
-      border: 1px solid var(--line);
-      background: var(--surface);
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--ink-soft);
-    }
-    .metric strong { color: var(--brand); font-weight: 800; }
-
-    /* THESIS NOTE */
-    .thesis {
-      border: 1px solid #eccaa9;
-      background: var(--brand-soft);
-      border-radius: var(--radius);
-      padding: 14px 18px;
-      margin-bottom: 22px;
-      font-size: 0.96rem;
-    }
-    .thesis strong {
-      color: var(--brand-ink);
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 700;
-    }
-
-    /* NAV */
-    nav.toc {
-      position: sticky;
-      top: 10px;
-      z-index: 30;
-      background: rgba(255, 252, 248, 0.92);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 8px 10px;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 22px;
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-    nav.toc a {
-      flex-shrink: 0;
+    /* Event-roster-specific extensions to the digital garden base */
+    .roster-card {
+      display: block;
+      padding: 0.9rem 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 4px;
+      margin-bottom: 0.6rem;
       text-decoration: none;
-      color: var(--ink-soft);
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 6px 12px;
-      border-radius: 999px;
-      transition: background 0.15s;
-    }
-    nav.toc a:hover { background: var(--brand-soft); color: var(--brand-ink); }
-
-    /* SECTION HEADERS */
-    section { margin-bottom: 36px; scroll-margin-top: 80px; }
-    .section-head {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-    .section-head h2 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      margin: 0;
-      color: var(--ink);
-    }
-    .section-head .section-meta {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    /* CARDS */
-    .cards {
-      display: grid;
-      gap: 14px;
-    }
-    .card {
-      border: 1px solid var(--line);
-      background: var(--surface);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      padding: 16px 18px;
+      color: var(--fg);
       position: relative;
     }
-    .card.top-tier { background: linear-gradient(135deg, #fffdf9 0%, #fff5ea 100%); }
-    .card-head {
+    .roster-card[data-tier="1"] { border-left: 3px solid var(--tier1); }
+    .roster-card[data-tier="2"] { border-left: 3px solid var(--tier2); }
+    .roster-card[data-tier="3"] { border-left: 3px solid var(--border); }
+    .roster-card[data-tier="low"] { border-left: 3px solid #ddd; opacity: 0.92; }
+
+    .roster-head {
       display: flex;
-      gap: 14px;
-      align-items: flex-start;
+      align-items: baseline;
+      gap: 0.6rem;
       flex-wrap: wrap;
-      margin-bottom: 6px;
+      margin-bottom: 0.25rem;
     }
-    .rank-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 54px;
+    .roster-rank {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--fg-muted);
+      min-width: 1.7rem;
     }
-    .rank {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.9rem;
-      line-height: 1;
-      color: var(--brand);
+    .roster-name {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: -0.005em;
     }
-    .rank-delta {
-      font-size: 0.7rem;
-      font-weight: 700;
-      margin-top: 2px;
-      color: var(--muted);
-      letter-spacing: 0.02em;
+    .roster-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--fg-faint);
+      margin-left: auto;
+      text-transform: lowercase;
     }
-    .rank-delta.up { color: var(--green-ink); }
-    .rank-delta.down { color: var(--red-ink); }
-    .name-block { flex: 1; min-width: 220px; }
-    .name {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      margin: 0 0 4px;
-      color: var(--ink);
-      line-height: 1.15;
-    }
-    .pill-row {
+    .roster-meta .up { color: #2e7d32; }
+    .roster-meta .down { color: var(--accent); }
+
+    .roster-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 4px;
+      gap: 0.3rem;
+      margin: 0.25rem 0 0.4rem;
     }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 3px 10px;
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      border: 1px solid transparent;
-    }
-    .pill.tier-s { background: var(--brand-soft); color: var(--brand-ink); border-color: #eccaa9; }
-    .pill.tier-a { background: var(--amber-soft); color: var(--amber-ink); border-color: #e8cf85; }
-    .pill.tier-b { background: var(--green-soft); color: var(--green-ink); border-color: #b5dbc1; }
-    .pill.tier-c { background: var(--sky); color: var(--sky-ink); border-color: #c4d8ef; }
-    .pill.tier-low { background: #ece8e1; color: #5a5147; border-color: #d6cebf; }
+    .roster-tags .tag.lane { background: var(--tag-bg); color: var(--tag-fg); }
+    .roster-tags .tag.status-approved { background: #e6f0e6; color: #2e7d32; }
+    .roster-tags .tag.status-approve-now { background: #fdf6f5; color: var(--accent); border: 1px solid #f0d4cf; }
+    .roster-tags .tag.status-verify { background: #fdf6e8; color: #8a6a1a; }
+    .roster-tags .tag.status-borderline { background: var(--tag-bg); color: var(--fg-muted); }
+    .roster-tags .tag.status-demoted { background: #f5e6e4; color: var(--accent); }
 
-    .pill.approved { background: var(--green-soft); color: var(--green-ink); border-color: #b5dbc1; }
-    .pill.approve-now { background: #fff1e5; color: var(--brand-ink); border-color: #f0c69b; }
-    .pill.verify { background: var(--amber-soft); color: var(--amber-ink); border-color: #e8cf85; }
-    .pill.borderline { background: #ece8e1; color: #5a5147; border-color: #d6cebf; }
-    .pill.demoted { background: var(--red-soft); color: var(--red-ink); border-color: #e8a89f; }
-
-    .pill.lane { background: #f3eee7; color: #5a4738; border-color: #d8c1ac; text-transform: none; font-weight: 700; }
-
-    .intro {
-      color: var(--ink-soft);
-      font-size: 0.97rem;
-      margin: 10px 0 8px;
-    }
-    .verify-note {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-style: italic;
-      margin: 0 0 8px;
-    }
-    .verify-note.green { color: var(--green-ink); font-style: normal; font-weight: 600; }
-    .verify-note.red { color: var(--red-ink); font-style: normal; font-weight: 600; }
-    .verify-note.amber { color: var(--amber-ink); font-style: normal; font-weight: 600; }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin: 8px 0 10px;
-    }
-    .links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border: 1px solid #d8c8ba;
-      border-radius: 999px;
-      background: #fff;
-      color: var(--brand-ink);
-      transition: all 0.15s;
-    }
-    .links a:hover {
-      background: var(--brand-soft);
-      border-color: var(--brand);
-    }
-    .links a.primary {
-      background: var(--brand-soft);
-      border-color: #e8b48a;
-    }
-
-    .talk {
-      margin-top: 10px;
-      border-left: 3px solid var(--brand);
-      background: #fff8f0;
-      padding: 8px 12px;
-      border-radius: 0 10px 10px 0;
-      font-size: 0.93rem;
-    }
-    .talk strong {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--brand-ink);
-      font-weight: 700;
-      display: block;
-      margin-bottom: 3px;
-      font-size: 0.82rem;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-    }
-
-    /* COMPACT cards for lower tier */
-    .compact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 10px;
-    }
-    .compact-card {
-      border: 1px solid var(--line);
-      background: var(--surface);
-      border-radius: var(--radius-sm);
-      padding: 11px 14px;
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 12px;
-      align-items: start;
-    }
-    .compact-rank {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: var(--muted);
-      line-height: 1;
-      padding-top: 2px;
-    }
-    .compact-name {
-      font-family: 'Fraunces', Georgia, serif;
-      font-weight: 700;
-      font-size: 1.02rem;
-      color: var(--ink);
-      margin: 0;
-      line-height: 1.2;
-    }
-    .compact-note {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin: 4px 0 6px;
-    }
-    .compact-talk {
-      font-size: 0.82rem;
-      color: var(--ink-soft);
-      margin: 0;
-      padding-left: 8px;
-      border-left: 2px solid #eadbcf;
-    }
-    .compact-pills {
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-      margin-top: 4px;
-    }
-    .compact-pills .pill { font-size: 0.68rem; padding: 2px 7px; }
-    .compact-links {
-      display: flex;
-      gap: 5px;
-      flex-wrap: wrap;
-      margin-top: 6px;
-    }
-    .compact-links a {
-      font-size: 0.74rem;
-      padding: 2px 8px;
-      text-decoration: none;
-      color: var(--brand-ink);
-      border: 1px solid #ddc9b7;
-      border-radius: 999px;
-      background: #fff;
-      font-weight: 700;
-    }
-
-    /* FOOTER */
-    footer {
-      margin-top: 40px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      background: rgba(255, 252, 248, 0.7);
-      border-radius: var(--radius);
+    .roster-intro {
       font-size: 0.88rem;
-      color: var(--muted);
+      color: var(--fg);
+      line-height: 1.55;
+      margin: 0.35rem 0 0.5rem;
     }
-    footer h3 {
-      font-family: 'Fraunces', Georgia, serif;
-      color: var(--ink);
-      margin: 0 0 8px;
-    }
-    footer ul { margin: 6px 0 0; padding-left: 22px; }
-    footer li { margin-bottom: 4px; }
+    .roster-intro strong { font-weight: 600; }
 
-    @media (max-width: 720px) {
-      .page { padding: 16px 12px 60px; }
-      .masthead { padding: 16px 14px; }
-      h1.title { font-size: 1.7rem; }
-      .rank { font-size: 1.5rem; }
-      .compact-grid { grid-template-columns: 1fr; }
+    .verify-line {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      margin: 0.3rem 0;
+      letter-spacing: 0.01em;
+    }
+    .verify-line.ok { color: #2e7d32; }
+    .verify-line.warn { color: #8a6a1a; }
+    .verify-line.bad { color: var(--accent); }
+
+    .roster-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin: 0.4rem 0 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.74rem;
+    }
+    .roster-links a {
+      color: var(--fg-muted);
+      text-decoration: underline;
+      text-decoration-color: var(--border);
+    }
+    .roster-links a:hover { color: var(--fg); text-decoration-color: var(--fg); }
+    .roster-links a.primary { color: var(--accent); }
+
+    .talk-box {
+      background: #fdf6f5;
+      border-left: 2px solid var(--accent);
+      padding: 0.55rem 0.8rem;
+      margin-top: 0.5rem;
+      font-size: 0.83rem;
+      line-height: 1.5;
+    }
+    .talk-box .label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    /* Compact grid for lower tier */
+    .roster-compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.45rem;
+      margin-bottom: 1rem;
+    }
+    .roster-compact {
+      padding: 0.55rem 0.7rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 3px;
+    }
+    .roster-compact[data-tier="3"] { border-left: 3px solid var(--border); }
+    .roster-compact[data-tier="low"] { border-left: 3px solid #e8e8e8; }
+    .roster-compact .roster-head { margin-bottom: 0.15rem; }
+    .roster-compact .roster-name { font-size: 0.88rem; }
+    .roster-compact .roster-intro { font-size: 0.76rem; color: var(--fg-muted); margin: 0.15rem 0 0.3rem; }
+    .roster-compact .roster-links { font-size: 0.66rem; margin: 0.15rem 0 0; gap: 0.3rem 0.7rem; }
+    .roster-compact .talk-line {
+      font-size: 0.72rem;
+      color: var(--fg-muted);
+      font-family: var(--mono);
+      margin: 0.2rem 0 0;
+      padding-left: 0.6rem;
+      border-left: 1px solid var(--border-light);
+      font-style: normal;
+    }
+
+    .thesis-block {
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--card-bg);
+      font-size: 0.85rem;
+    }
+    .thesis-block .label {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+
+    @media (max-width: 600px) {
+      .roster-compact-grid { grid-template-columns: 1fr; }
+      .roster-meta { margin-left: 0; flex-basis: 100%; }
     }
   </style>
 </head>
 <body>
-<div class="page">
 
-  <header class="masthead">
-    <p class="eyebrow">Frontier AI Researchers · Event Roster · May 2026</p>
-    <h1 class="title">59 applicants, stack-ranked for the model layer</h1>
-    <p class="subtitle">Codex's original ranking re-verified against arXiv, GitHub, lab pages, and personal sites, then re-weighted for the investment thesis below. Every claim that anchored a top-tier score was checked back to primary source. Hallucinated GitHub repos and inflated second-pass adjustments are flagged.</p>
-    <div class="metric-row">
-      <span class="metric"><strong>59</strong> total applicants</span>
-      <span class="metric"><strong>7</strong> arXiv papers verified</span>
-      <span class="metric"><strong>5</strong> strong approves (pending)</span>
-      <span class="metric"><strong>3</strong> approve if seats (pending)</span>
-      <span class="metric"><strong>2</strong> codex hallucinations caught</span>
-    </div>
-  </header>
-
-  <div class="thesis">
-    <strong>Investment thesis (reweighting):</strong> world models · foundation models · physical AI. Interested in the underlying model layer and the researchers behind it — explicitly <em>not</em> vertical robotics products. Codex's general frontier-AI scoring has been adjusted to favor researchers whose work sits at the model layer (foundation models, AI for science, mechanistic interpretability, formal verification, generalization theory).
-  </div>
-
-  <nav class="toc">
-    <a href="#priority">⚡ Top 10 priority</a>
-    <a href="#strong">Strong invites · 11–30</a>
-    <a href="#general">General invites · 31–59</a>
-    <a href="#flags">Methodology flags</a>
+  <nav>
+    <div class="site-title">Out of Distribution Events</div>
+    <div class="breadcrumb">/ frontier-ai-may-2026</div>
   </nav>
 
-  <!-- =============== TOP 10 =============== -->
-  <section id="priority">
-    <div class="section-head">
-      <h2>Top 10 — Priority conversations</h2>
-      <span class="section-meta">Reranked from codex by thesis fit. These are the people to spend time with.</span>
+  <h1>Frontier AI Researchers — May 2026</h1>
+  <p class="subtitle">Event roster · 59 applicants · codex output re-verified, reranked for the model layer</p>
+
+  <p class="small muted">
+    Every paper, repo, and lab page claim in codex's original ranking was checked back to primary source.
+    Verified arXiv: <span class="mono">2509.16369</span>, <span class="mono">2510.02742</span>,
+    <span class="mono">2602.08302</span>, <span class="mono">2603.02031</span>,
+    <span class="mono">2605.07386</span>, <span class="mono">2603.20671</span>,
+    <span class="mono">2507.05146</span>. Hallucinated repos and inflated second-pass adjustments are flagged.
+  </p>
+
+  <!-- Thesis -->
+  <div class="thesis-block">
+    <div class="label">◆ Reweighting thesis</div>
+    <p style="margin:0">
+      World models · foundation models · physical AI. Interested in the underlying model layer and the researchers behind it
+      — explicitly <em>not</em> vertical robotics products. Codex's general frontier-AI score is adjusted toward foundation
+      models, AI for science, mech interp, formal verification, and generalization theory.
+    </p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat"><div class="stat-value">59</div><div class="stat-label">applicants</div></div>
+    <div class="stat"><div class="stat-value">7</div><div class="stat-label">arxiv verified</div></div>
+    <div class="stat"><div class="stat-value">5</div><div class="stat-label">strong approves</div></div>
+    <div class="stat"><div class="stat-value">3</div><div class="stat-label">approve if seats</div></div>
+    <div class="stat"><div class="stat-value">2</div><div class="stat-label">codex hallucinations</div></div>
+  </div>
+
+  <!-- Tier legend -->
+  <div class="tier-legend" style="margin-top:1rem">
+    <span class="legend-t1">S / A · top-tier signal</span>
+    <span class="legend-t2">B · solid baseline</span>
+    <span class="legend-t3">C / low · light invite</span>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!--  TOP 10 PRIORITY                     -->
+  <!-- ════════════════════════════════════ -->
+  <h2>Top 10 — priority conversations</h2>
+  <p class="small muted">Reranked for thesis fit. Spend your time here.</p>
+
+  <!-- 1 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">01</span>
+      <span class="roster-name">Akshay Govind S</span>
+      <span class="roster-meta"><span class="up">⇧ from #2</span> · codex 88 · s-tier</span>
     </div>
-    <div class="cards">
-
-      <!-- 1. Akshay Govind S -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">1</div>
-            <div class="rank-delta up">⇧ from #2</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">Akshay Govind S</h3>
-            <div class="pill-row">
-              <span class="pill tier-s">S-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Foundation models · Physical AI</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Mechanical Engineering final-year at IITM, working with <strong>Prof. Balaji Srinivasan on "In-Context Learning for Physics Foundational Models"</strong>. NeurIPS 2025 workshop paper on physics-informed neural architectures for the biharmonic equation. Two verified arXiv papers (IndiCASA AIES 2025; Financial RAG with Multi-HyDE). Adobe May 2025 multi-agent collaborative RL for video; Sarvam.AI multilingual healthcare agents.</p>
-        <p class="verify-note green">✓ Personal site + NeurIPS workshop + 2 arXiv verified · Strongest thesis fit in pool</p>
-        <div class="links">
-          <a class="primary" href="https://tensorteen.github.io/" target="_blank">Website</a>
-          <a href="https://github.com/tensorteen" target="_blank">GitHub</a>
-          <a href="https://in.linkedin.com/in/akshaygovinds" target="_blank">LinkedIn</a>
-          <a href="https://arxiv.org/abs/2510.02742" target="_blank">IndiCASA arXiv</a>
-          <a href="https://arxiv.org/abs/2509.16369" target="_blank">Multi-HyDE arXiv</a>
-          <a href="https://x.com/akshayg2222" target="_blank">X</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          What's your endgame for the physics foundation model stack — full neural-operator pretraining or in-context only? Where's the training data coming from? Is the dream a research lab, a venture-backed applied AI company, or something in between?
-        </div>
-      </div>
-
-      <!-- 2. Atreya Vedantam -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">2</div>
-            <div class="rank-delta up">⇧ from #4</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">Atreya Vedantam</h3>
-            <div class="pill-row">
-              <span class="pill tier-s">S-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Generalization · Mech interp</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Two verified arXiv papers: <em>Grokking in Linear Models for Logistic Regression</em> (2nd author with Chandrashekar Lakshminarayanan) and a single-author <em>Characterization of Blind Code Rate Recovery</em>. Self-described interest: foundational work on generalization phenomena — grokking and privacy attacks specifically. Pure research/PhD intent.</p>
-        <p class="verify-note green">✓ Both arXiv papers + author position confirmed</p>
-        <div class="links">
-          <a class="primary" href="https://arxiv.org/abs/2602.08302" target="_blank">Grokking paper</a>
-          <a href="https://arxiv.org/abs/2603.02031" target="_blank">Blind code rate paper</a>
-          <a href="https://in.linkedin.com/in/atreya-vedantam-249890276" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          Of interpretability, evals, and model science — which one captures him most? The grokking work suggests he likes generalization-mystery problems; ask which open question he'd want a PhD around.
-        </div>
-      </div>
-
-      <!-- 3. J Vijayavallabh -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">3</div>
-            <div class="rank-delta down">⇩ from #1</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">J Vijayavallabh (Jayamanikandan)</h3>
-            <div class="pill-row">
-              <span class="pill tier-s">S-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Multimodal · RAG</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro"><strong>First author of ICCVW 2025 "Sparse Hyperbolic Convolutional Networks with Enhanced Object Localization via GradCAM Analysis"</strong> (with Prof. Raghunathan Rengaswamy). Named on Multi-HyDE Financial RAG paper. HuggingFace artifacts are RL coursework (FrozenLake, Taxi, LunarLander) — not original research, but the arXiv work is real. Best <em>general</em> frontier-AI score in the pool; less directly on your thesis than Akshay.</p>
-        <p class="verify-note green">✓ ICCVW 2025 first author + Multi-HyDE author confirmed</p>
-        <div class="links">
-          <a class="primary" href="https://arxiv.org/abs/2509.16369" target="_blank">Multi-HyDE arXiv</a>
-          <a href="https://dblp.org/rec/conf/iccv/JayamanikandanSRR25" target="_blank">ICCVW 2025</a>
-          <a href="https://huggingface.co/jvv7" target="_blank">HuggingFace</a>
-          <a href="https://in.linkedin.com/in/j-vijayavallabh" target="_blank">LinkedIn</a>
-          <a href="https://x.com/J_V_V_07" target="_blank">X</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          Walk through his exact contribution on Multi-HyDE vs ICCVW — last-author position on RAG paper suggests senior role. What's next? Lab, startup, or join an AI lab?
-        </div>
-      </div>
-
-      <!-- 4. Jay Gupta -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">4</div>
-            <div class="rank-delta up">⇧⇧ from #9</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">Jay Gupta</h3>
-            <div class="pill-row">
-              <span class="pill tier-a">A-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">World models · Neural operators</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro"><strong>DeepMind claim verified via Google's LinkedIn snippet</strong> ("Jay Gupta has experience at Google DeepMind and received education from IIT Madras"). Self-stated interests: world models, AI for Science, RL, AI hardware, Agents. Codex flagged "Medium confidence" because no public papers/repos surfaced — but the DeepMind credential alone elevates this above most A-tier picks.</p>
-        <p class="verify-note green">✓ DeepMind + IITM confirmed via WebSearch · Artifacts not public</p>
-        <div class="links">
-          <a class="primary" href="https://in.linkedin.com/in/jay-gupta-4992b4234" target="_blank">LinkedIn</a>
-          <a href="https://x.com/jay_gupta_s" target="_blank">X</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          What exactly did he ship at DeepMind? Is the interest closer to neural operators (Akshay's neighborhood) or to world-model rollouts (Genie-style)? Most leveraged single conversation in the room.
-        </div>
-      </div>
-
-      <!-- 5. Utkarsh Bheemanaboyna -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">5</div>
-            <div class="rank-delta">= #5</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">Utkarsh Bheemanaboyna</h3>
-            <div class="pill-row">
-              <span class="pill tier-a">A-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Multimodal · Explainability</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">3rd author on the verified <strong>VERITAS paper</strong> — AI-generated image detection with human-readable artifact explanations. Public code, HuggingFace paper page, AI Club IITM signal. Self-stated direction: VLAs/VLMs, multimodal reasoning, efficiency/compression.</p>
-        <p class="verify-note green">✓ VERITAS paper + author position confirmed</p>
-        <div class="links">
-          <a class="primary" href="https://arxiv.org/abs/2507.05146" target="_blank">VERITAS arXiv</a>
-          <a href="https://github.com/V-i-g-n-e-s-h-N/VERITAS" target="_blank">VERITAS GitHub</a>
-          <a href="https://huggingface.co/papers/2507.05146" target="_blank">HF paper</a>
-          <a href="https://in.linkedin.com/in/utkarsh-bheemanaboyna-138a292b1" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          What was his specific contribution on VERITAS? Is he interested in extending this to video / VLAs? Where does VLM interpretability rank vs raw capability for him?
-        </div>
-      </div>
-
-      <!-- 6. Karthick Krishna M -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">6</div>
-            <div class="rank-delta up">⇧ from #7</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">Karthick Krishna M (Mahendran)</h3>
-            <div class="pill-row">
-              <span class="pill tier-a">A-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Optimization · Generative ML</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Two verified 2026 arXiv papers on online convex optimization (with Prof. Rahul Vaze). Codex framed him as pure theory — actually his GitHub has <strong>Deepfake Detection, Facial Expression Recognition, and forked denoising-diffusion-pytorch</strong>. Real ML implementation work alongside the optimization theory.</p>
-        <p class="verify-note green">✓ 2 arXiv papers + ML implementation repos confirmed</p>
-        <div class="links">
-          <a class="primary" href="https://krishnap25.github.io/group" target="_blank">Research group</a>
-          <a href="https://arxiv.org/abs/2605.07386" target="_blank">arXiv 2605.07386</a>
-          <a href="https://arxiv.org/abs/2603.20671" target="_blank">arXiv 2603.20671</a>
-          <a href="https://github.com/KarthickKrishnaM" target="_blank">GitHub</a>
-          <a href="https://in.linkedin.com/in/karthick-krishna-m-454777225" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          How does he see online convex optimization connecting to modern ML? Diffusion models in his repo suggests he's bridging — ask what bridge he wants to build.
-        </div>
-      </div>
-
-      <!-- 7. Vaibhav Shivrain -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">7</div>
-            <div class="rank-delta up">⇧⇧ from #13</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">Vaibhav Shivrain</h3>
-            <div class="pill-row">
-              <span class="pill tier-a">A-tier</span>
-              <span class="pill approve-now">Pending → Approve</span>
-              <span class="pill lane">AI for Science · Bio</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro"><strong>Confirmed on Prof. Sinha's Systems Genetics Lab page</strong> as a Dual Degree Programme researcher on "Large scale yeast metabolic modelling." Together Fund + Charpak Fellowship signals. Self-stated: "machine learning models for metabolic modelling and reasoning" with startup intent. This is the AI-for-bio neighborhood your portfolio already lives in.</p>
-        <p class="verify-note green">✓ Sinha Lab DDP role verified · Confidence should be High, not Medium</p>
-        <div class="links">
-          <a class="primary" href="https://home.iitm.ac.in/sinha/people.html" target="_blank">Sinha Lab page</a>
-          <a href="https://in.linkedin.com/in/vaibhav-shivrain18" target="_blank">LinkedIn</a>
-          <a href="https://x.com/Vaibnof" target="_blank">X</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          Is the yeast metabolic modeling work heading toward a learned foundation model for cellular biology, or staying as classical SBML / FBA? Has he looked at Evo / scGPT / Geneformer? Where does he sit on the wet-lab ↔ pure-ML axis?
-        </div>
-      </div>
-
-      <!-- 8. Naveen Chavali -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">8</div>
-            <div class="rank-delta down">⇩ from #6</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">Naveen Chavali</h3>
-            <div class="pill-row">
-              <span class="pill tier-a">A-tier</span>
-              <span class="pill verify">Verify in person</span>
-              <span class="pill lane">Edge inference silicon</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Codex called him an "exceptional hardware builder." His GitHub `chvsnaveen12` shows 8-bit-CMOS-Computer, Pulse-Generator, RC-glider — <strong>no RISC-V SoC or matmul unit visible</strong>, contrary to his confident application text. Either the SoC is private, the Medium blog has it (couldn't fetch), or he's overstating. Edge-inference silicon IS the substrate the model layer runs on — not off-thesis, but the artifact-vs-claim gap needs resolving live.</p>
-        <p class="verify-note amber">⚠ "Linux-capable RISC-V SoC" claim not visible on public GitHub</p>
-        <div class="links">
-          <a href="https://github.com/chvsnaveen12" target="_blank">GitHub</a>
-          <a href="https://medium.com/naveen-projects" target="_blank">Medium</a>
-          <a href="https://medium.com/naveen-projects/3d-printer-d02172fc8f45" target="_blank">3D printer post</a>
-          <a href="https://linkedin.com/in/naveen-chavali-4300b222b" target="_blank">LinkedIn</a>
-          <a href="https://x.com/chvsnaveen12" target="_blank">X</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          Walk through the SoC on a laptop. Is it Linux-booting yet? Where's the matmul unit in the pipeline — implemented, or still RTL drafts? Private repo invite welcomed.
-        </div>
-      </div>
-
-      <!-- 9. Madhav Bhardwaj -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">9</div>
-            <div class="rank-delta up">⇧⇧ from #19</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">Madhav Bhardwaj</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approve-now">Pending → Approve</span>
-              <span class="pill lane">SNN · Efficient architectures</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro"><strong>JEE Main AIR 25, JEE Advanced AIR 126, KVPY scholar, IITM CSE, high CGPA</strong> — academic baseline at the ceiling of measurable Indian talent. Self-stated interest: "SNNs and their usage in transformer architecture… energy efficiency of language models." Research/PhD intent. No public artifact yet, but the right interest pointed at the right architecture frontier.</p>
-        <p class="verify-note amber">⚠ No public SNN artifact — high-baseline, no-build profile. High EV invite.</p>
-        <div class="links">
-          <a class="primary" href="https://in.linkedin.com/in/madhav-bhardwaj-mln" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          Walk through his SNN reading list — Spikformer, Spike-driven Transformer V2, Meta-SpikeFormer? Has he picked a thesis question, or still in survey mode? Show him the gap between "energy efficiency" framing and "neuromorphic chip co-design" framing — see which one lights him up.
-        </div>
-      </div>
-
-      <!-- 10. Achintya Jai -->
-      <div class="card top-tier">
-        <div class="card-head">
-          <div class="rank-block">
-            <div class="rank">10</div>
-            <div class="rank-delta down">⇩⇩ from #3</div>
-          </div>
-          <div class="name-block">
-            <h3 class="name">Achintya Jai</h3>
-            <div class="pill-row">
-              <span class="pill tier-s">S-tier (general)</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Formal verification · Cybersec</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Strong builder — <strong>OWASP Nettacker (5.2k★)</strong>, open-atlas OSINT (80★), TerminAI, pyba. But these are classical cybersecurity, NOT LLM safety / mech interp despite codex's framing. Application interests include <strong>formal verification</strong> — which bridges directly to your Lean tax-law portfolio company. Reframe: don't expect AI-control depth; do expect serious-builder depth that could pivot.</p>
-        <p class="verify-note red">⚠ Codex framed as AI-safety builder; public artifacts are cybersec/OSINT. Formal-verification thread is the actual bridge.</p>
-        <div class="links">
-          <a class="primary" href="https://github.com/pUrGe12" target="_blank">GitHub</a>
-          <a href="https://purge12.github.io/" target="_blank">Website</a>
-          <a href="https://devpost.com/helloitsme0218" target="_blank">Devpost</a>
-          <a href="https://nest.owasp.org/members/pUrGe12" target="_blank">OWASP</a>
-          <a href="https://in.linkedin.com/in/achintya-jai" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk">
-          <strong>What to talk about</strong>
-          You listed formal verification as an interest — have you played with Lean, Coq, or TLA+? I'm asking because of a portfolio project formalizing US tax law in Lean. Separately: have you ported any Nettacker / OSINT tooling toward LLM-agent red-teaming?
-        </div>
-      </div>
-
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">foundation models</span>
+      <span class="tag lane">physical ai</span>
+      <span class="tag lane">multi-agent rl</span>
     </div>
-  </section>
-
-  <!-- =============== STRONG INVITES 11-30 =============== -->
-  <section id="strong">
-    <div class="section-head">
-      <h2>Strong invites · 11–30</h2>
-      <span class="section-meta">Solid signal, often with verification asterisks. Talking points target the missing piece.</span>
+    <p class="roster-intro">
+      Mechanical Engineering final-year at IITM, working with <strong>Prof. Balaji Srinivasan on "In-Context Learning for Physics Foundational Models."</strong>
+      NeurIPS 2025 workshop paper on physics-informed architectures for the biharmonic equation. Two verified arXiv papers (IndiCASA AIES 2025; Multi-HyDE Financial RAG).
+      Adobe May 2025 multi-agent collaborative RL for video; Sarvam.AI multilingual healthcare agents.
+    </p>
+    <div class="verify-line ok">✓ site + neurips workshop + 2 arxiv verified · strongest thesis fit in pool</div>
+    <div class="roster-links">
+      <a class="primary" href="https://tensorteen.github.io/">website</a>
+      <a href="https://github.com/tensorteen">github</a>
+      <a href="https://in.linkedin.com/in/akshaygovinds">linkedin</a>
+      <a href="https://arxiv.org/abs/2510.02742">indicasa</a>
+      <a href="https://arxiv.org/abs/2509.16369">multi-hyde</a>
+      <a href="https://x.com/akshayg2222">x</a>
     </div>
-    <div class="cards">
-
-      <!-- 11. Shanmukh raj MSS -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">11</div><div class="rank-delta down">⇩ from #10</div></div>
-          <div class="name-block">
-            <h3 class="name">Shanmukh raj MSS</h3>
-            <div class="pill-row">
-              <span class="pill tier-a">A-tier</span>
-              <span class="pill approve-now">Pending → Approve</span>
-              <span class="pill lane">Applied AI · Builder</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Strongest <em>shipper</em> signal in the pool — 50 GitHub repos, real PyPI packages (`isql-kernel`), KhetAI agriculture platform, ISQL multi-kernel Jupyter, ML-based product pricing with heavy feature engineering. CodeChef problem-setter. Less foundation-model focused; pure execution.</p>
-        <p class="verify-note green">✓ PyPI packages + multi-kernel work confirmed</p>
-        <div class="links">
-          <a class="primary" href="https://github.com/ShanmukhEstrella" target="_blank">GitHub</a>
-          <a href="https://pypi.org/user/Scintillator_Sha/" target="_blank">PyPI</a>
-          <a href="https://pypi.org/project/isql-kernel/" target="_blank">isql-kernel</a>
-          <a href="https://in.linkedin.com/in/shanmukh-raj-mss-b3903a250" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>Which of the 50 repos is he proudest of, and why? What's the biggest production problem he's solved end-to-end? Where does he want his execution muscle next — applied AI startup, infra, agents?</div>
-      </div>
-
-      <!-- 12. Kailash Gopal D -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">12</div><div class="rank-delta down">⇩ from #8</div></div>
-          <div class="name-block">
-            <h3 class="name">Kailash Gopal D</h3>
-            <div class="pill-row">
-              <span class="pill tier-a">A-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Theory · Algorithms</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Strong theory trajectory: IITM Theory Group, TTIC annual report mention, IISc internship with Prof. Arindam Khan on algorithms. Pseudorandomness/complexity. Off-thesis for foundation models, but the kind of theorist who could turn into an evals or model-science contributor.</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/kailash-gopal" target="_blank">LinkedIn</a>
-          <a href="https://www.cse.iitm.ac.in/~theory/viewpeople.php?alumni=0&peopletype=8%2C9" target="_blank">IITM Theory</a>
-          <a href="https://ttic.edu/dl/annual_report.pdf" target="_blank">TTIC report</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>Does he want to apply theory to AI — to evals, complexity of reasoning, sample complexity for foundation models? Or stay in pure complexity?</div>
-      </div>
-
-      <!-- 13. Sharmil Kumar Basa -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">13</div><div class="rank-delta up">⇧ from #18</div></div>
-          <div class="name-block">
-            <h3 class="name">Sharmil Kumar Basa</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approve-now">Pending → Approve (if seats)</span>
-              <span class="pill lane">Mech interp · LLMs</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Self-reported "Frontier AI hackathon placement" and "Qiskit winner" — no public corroboration found in searches. Stated direction: "Exploring reasoning capabilities and interpretability of LLMs." Startup intent. Mech interp is on-thesis even if the credentials are softer than claimed.</p>
-        <p class="verify-note amber">⚠ Both hackathon claims unverified — ask for links</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/sharmil-kumar-basa" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>Which frontier AI hackathon and what was the project? Which mech-interp paper has he actually re-implemented (this filters fast)?</div>
-      </div>
-
-      <!-- 14. Aditya Palwe -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">14</div><div class="rank-delta down">⇩ from #11</div></div>
-          <div class="name-block">
-            <h3 class="name">Aditya Palwe</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Voice AI · Applied</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Smallest.ai blog credit on emotion detection in STT (blog returned 403 to scraper — couldn't verify authorship independently). Rubrik intern + IITM. Open-source voice AI cookbook credit. Listed interest is formal verification, but lived work is voice agents.</p>
-        <p class="verify-note amber">⚠ Smallest.ai blog authorship not independently confirmed</p>
-        <div class="links">
-          <a class="primary" href="https://smallest.ai/blog/how-emotion-detection-is-reshaping-voice-ai-%28and-how-traditional-stt-leaves-it-behind%29" target="_blank">Smallest.ai blog</a>
-          <a href="https://in.linkedin.com/in/aditya-palwe" target="_blank">LinkedIn</a>
-          <a href="https://x.com/AytidaXd" target="_blank">X</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>Which part of the Pulse STT pipeline did he ship? Voice AI is a crowded vertical — what's his angle?</div>
-      </div>
-
-      <!-- 15. Karthik Cheripelly -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">15</div><div class="rank-delta down">⇩ from #12</div></div>
-          <div class="name-block">
-            <h3 class="name">Karthik Cheripelly</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill verify">Verify role</span>
-              <span class="pill lane">CV product · Sports</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">LinkedIn says "Building Gaara AI" — real product with credible MediaPipe + LSTM stack and Nirmaan/NVIDIA Inception support. <strong>He's NOT mentioned anywhere on the Gaara AI website.</strong> Either he's a co-founder not yet listed, an early eng, or overstating. Product-layer work, not model-layer.</p>
-        <p class="verify-note amber">⚠ Codex took LinkedIn at face value — Gaara AI site doesn't list him</p>
-        <div class="links">
-          <a class="primary" href="https://www.gaaraai.com" target="_blank">Gaara AI</a>
-          <a href="https://in.linkedin.com/company/gaaraai" target="_blank">Gaara LinkedIn</a>
-          <a href="https://in.linkedin.com/in/karthik-cheripelly-708847252" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>What's his actual role/equity at Gaara AI? How much of the MediaPipe + LSTM stack did he personally build?</div>
-      </div>
-
-      <!-- 16. Mahandeep Parida -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">16</div><div class="rank-delta down">⇩ from #14</div></div>
-          <div class="name-block">
-            <h3 class="name">Mahandeep Parida</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill borderline">Pending · borderline</span>
-              <span class="pill lane">General talent</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Strong olympiad + Codeforces signal. Devpost "Salvage Diabetic Limbs" is a Flask app wrapping Google Gemini Vision API for foot-ulcer detection. GitHub: Bank-Fraud-Detection, Crypto-Trading-Strategies, scalar pipelined processor sim, bioinformatics. AI work is mostly API-wrappers, not model layer.</p>
-        <div class="links">
-          <a href="https://github.com/Mahandeep" target="_blank">GitHub</a>
-          <a href="https://codeforces.com/profile/buburibu1234" target="_blank">Codeforces</a>
-          <a href="https://devpost.com/software/salvage-diabetic-limbs" target="_blank">Devpost</a>
-          <a href="https://in.linkedin.com/in/mahandeep-parida-417466252" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>"AI pet" idea is vague — pin him down. What's the simplest version that would impress a 12-year-old? What's the model layer he'd build, vs API plumbing?</div>
-      </div>
-
-      <!-- 17. Vignesh Gaikoti -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">17</div><div class="rank-delta up">⇧ from #21</div></div>
-          <div class="name-block">
-            <h3 class="name">Vignesh Gaikoti</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approve-now">Pending → Approve</span>
-              <span class="pill lane">Systems · Compilers</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Google intern + IITM. Real systems work verified: <strong>Scalar-Pipelined-Processor (C++ with README and sample inputs), MiniC-to-x86-Assembly compiler, Huffman compression</strong>. No AI artifacts yet. Compiler + processor pairing is rare and signals depth.</p>
-        <p class="verify-note green">✓ All 3 second-pass GitHub repos verified substantive</p>
-        <div class="links">
-          <a class="primary" href="https://github.com/VigneshGaikoti" target="_blank">GitHub</a>
-          <a href="https://github.com/VigneshGaikoti/Scalar-Pipelined-Processor" target="_blank">Pipeline processor</a>
-          <a href="https://github.com/VigneshGaikoti/MiniC-to-x86-Assembly" target="_blank">MiniC compiler</a>
-          <a href="https://in.linkedin.com/in/vignesh-gaikoti-04a134283" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>Systems-meets-AI: has he thought about CUDA kernel-level work, ML compilers (Triton, MLIR), or efficient inference? Where does the compiler interest pull him next?</div>
-      </div>
-
-      <!-- 18. Tallapaneni Subhash Ram -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">18</div><div class="rank-delta up">⇧ from #24</div></div>
-          <div class="name-block">
-            <h3 class="name">Tallapaneni Subhash Ram</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approve-now">Pending → Approve (if seats)</span>
-              <span class="pill lane">MCP · Agents</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Self-stated: "Optimization of MCP server pipelines for AI agent systems — especially reducing tool latency and improving context orchestration reliability for multi-step reasoning workflows." Vocabulary is unusually precise for the stage. Elite IITM CSE entrance rank, Codeforces Pupil. No public MCP artifact.</p>
-        <p class="verify-note amber">⚠ Vocabulary suggests depth; no public artifact to verify</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/subhashram236" target="_blank">LinkedIn</a>
-          <a href="https://codeforces.com/profile/sRT_1037" target="_blank">Codeforces</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>Walk through a specific MCP server he's profiled — where are the latency bottlenecks? Has he benchmarked anything (Anthropic's MCP servers, custom)? Is there a private repo?</div>
-      </div>
-
-      <!-- 19. Shrijith Belagur -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">19</div><div class="rank-delta down">⇩ from #15</div></div>
-          <div class="name-block">
-            <h3 class="name">Shrijith Belagur</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">AI Club coordinator</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Microsoft intern + IITM. AI Club coordinator signal. Listed on an IITM teaching course page. Broad self-stated interest across agents, world models, multimodal, efficiency, hardware, mech interp, RL — wide net suggests still exploring. No public AI repo/paper.</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/shrijith-belagur-428625248" target="_blank">LinkedIn</a>
-          <a href="https://courses.iitm.ac.in/course/info.php?id=11108" target="_blank">IITM course page</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>What's the AI Club's biggest current project — and his role in it? If forced to pick ONE of the eight listed interests for the next 12 months, which?</div>
-      </div>
-
-      <!-- 20. Vedang Bahuguna -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">20</div><div class="rank-delta down">⇩ from #16</div></div>
-          <div class="name-block">
-            <h3 class="name">Vedang Bahuguna</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Quant · Systems</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">D. E. Shaw intern, strong CS/quant baseline. Interests: agents, efficiency/compression, AI safety, formal verification, HFT/startup paths. No public AI artifact — quant trajectory dominates the visible signal.</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/vedang-bahuguna-6747b4269" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>Quant vs AI startup vs AI lab — what does the optionality look like for him? Formal verification interest is interesting alongside HFT — Lean tax-law bridge?</div>
-      </div>
-
-      <!-- 21. Yashvardhan Toshniwal -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">21</div><div class="rank-delta down">⇩ from #17</div></div>
-          <div class="name-block">
-            <h3 class="name">Yashvardhan Toshniwal</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Agentic · Safety curious</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Strong IITM CSE / GPA / Millennium School. Sincere written interest in AGI safety and MCP — references Anthropic's mithos sandbox-break news with the right framing. HFT/Quant intent. No public AI artifact yet.</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/yashvardhan-toshniwal-532b48258" target="_blank">LinkedIn</a>
-          <a href="https://www.cse.iitm.ac.in/tablelistpeople.php?+page=4&arg=U3R1ZGVudHMhMTUkMA%3D%3D&ipp=50" target="_blank">IITM CSE</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>The mithos question is the right question — how does HE answer it? Has he built any MCP tools or agent automations of his own?</div>
-      </div>
-
-      <!-- 22. Mihir Vaishampayan -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">22</div><div class="rank-delta down">⇩ from #20</div></div>
-          <div class="name-block">
-            <h3 class="name">Mihir Vaishampayan</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Quant · Mech interp curious</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Tower Research, JEE Advanced AIR 123. Self-stated interest in mech interp but "nothing particular as of now" in active building. HFT/Quant trajectory. Strong baseline signal; AI motivation unverified.</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/mihir-rohit-vaishampayan-32810925a" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>What pulled him to mech interp in the first place? Has he read Anthropic's circuit work or just heard about it? Is the quant career a hard yes, or still considering AI labs?</div>
-      </div>
-
-      <!-- 23. Sai Srikar Koushik Chittabattula -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">23</div><div class="rank-delta up">⇧ from #26</div></div>
-          <div class="name-block">
-            <h3 class="name">Sai Srikar Koushik Chittabattula</h3>
-            <div class="pill-row">
-              <span class="pill tier-c">C-tier</span>
-              <span class="pill borderline">Pending · borderline</span>
-              <span class="pill lane">Samsung R&D</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Samsung R&D MAGPIE intern + Pravartak fellowship — both real, competitive programs. GitHub `cs22b070` has <strong>only one repo (`demo`)</strong> which is concerning given the resume. Either his work is behind Samsung's IP wall, or the credential is the whole signal.</p>
-        <p class="verify-note amber">⚠ Strong credentials, near-zero public output</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/sai-srikar-koushik-chittabattula-193730262" target="_blank">LinkedIn</a>
-          <a href="https://github.com/cs22b070" target="_blank">GitHub</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>What was the MAGPIE project (NDA-permitting)? Why so little public code given the strong internships?</div>
-      </div>
-
-      <!-- 24. Rohan Kadam -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">24</div><div class="rank-delta up">⇧ from #27</div></div>
-          <div class="name-block">
-            <h3 class="name">Rohan Kadam</h3>
-            <div class="pill-row">
-              <span class="pill tier-c">C-tier</span>
-              <span class="pill approve-now">Pending → Approve</span>
-              <span class="pill lane">Formal verif · Systems</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">cs22b083 GitHub has a real <strong>OCaml lock-free synchronous dual queue project</strong> with TSAN race detection, QCheck-Lin tests, and a benchmark harness. Plus a CircuitVerse SAP-1 CPU. Listed interests: agents, AI for science, <strong>formal verification</strong>, RL — direct bridge to your Lean tax-law portfolio.</p>
-        <p class="verify-note green">✓ OCaml concurrency project verified substantive</p>
-        <div class="links">
-          <a class="primary" href="https://github.com/cs22b083/CS6868_Project" target="_blank">OCaml project</a>
-          <a href="https://github.com/cs22b083" target="_blank">GitHub</a>
-          <a href="https://www.cse.iitm.ac.in/profile.php?arg=Mjk3Mw%3D%3D" target="_blank">IITM CSE</a>
-          <a href="https://in.linkedin.com/in/rohan-kadam-6b5524254" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>Has he explored Lean or Coq? The concurrency correctness work is a stone's throw from formal verification — would he be interested in auto-formalizing legal/tax/regulatory rules? Portfolio bridge.</div>
-      </div>
-
-      <!-- 25. Parva Satodia -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">25</div><div class="rank-delta down">⇩ from #22</div></div>
-          <div class="name-block">
-            <h3 class="name">Parva Satodia</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">CP · Many interests</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Programming Club, <strong>Codeforces Expert</strong>, strong JEE ranks. Listed interests are across <em>everything</em> AI (agents, world models, multimodal, mech interp, RL, AI safety, efficiency, AI for science) — wide-net signal. No public AI project.</p>
-        <div class="links">
-          <a href="https://codeforces.com/profile/parvasatodia" target="_blank">Codeforces</a>
-          <a href="https://in.linkedin.com/in/parva-satodia-15a6b4286" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>If forced to pick one direction for the next 12 months from her listed 8, which? Would she do a research internship over an AI Club project?</div>
-      </div>
-
-      <!-- 26. Harsh Vardhan Daga -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">26</div><div class="rank-delta down">⇩ from #23</div></div>
-          <div class="name-block">
-            <h3 class="name">Harsh Vardhan Daga</h3>
-            <div class="pill-row">
-              <span class="pill tier-b">B-tier</span>
-              <span class="pill borderline">Pending · borderline</span>
-              <span class="pill lane">Optimization research</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Millennium School + IITM CSE. UGRC under Prof. Rupesh Nasre on emission-optimizing capacitated vehicle routing (CVRP) — real undergraduate research with a named PI. Interests: AI for Science, Multimodal, Agents. HFT/startup paths.</p>
-        <div class="links">
-          <a href="https://www.cse.iitm.ac.in/~rupesh/?mode=Mentoring" target="_blank">UGRC listing</a>
-          <a href="https://in.linkedin.com/in/harsh-vardhan-daga" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>How does the CVRP optimization work translate to ML? Has he thought about learned solvers (NeurIPS-style ML4CO work)?</div>
-      </div>
-
-      <!-- 27. Vibhav Kanakamedala -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">27</div><div class="rank-delta down">⇩ from #25</div></div>
-          <div class="name-block">
-            <h3 class="name">Vibhav Kanakamedala</h3>
-            <div class="pill-row">
-              <span class="pill tier-c">C-tier</span>
-              <span class="pill borderline">Pending · borderline</span>
-              <span class="pill lane">Kernel/eBPF systems</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">AWS intern + IITM. eBPF/kernel-tracing curiosity on StackOverflow — unusual depth for an undergrad. Listed AI interests in RL and multimodal. No AI artifacts; systems specialist whose AI intent is unproven.</p>
-        <div class="links">
-          <a href="https://stackoverflow.com/questions/79259950/ebpf-accessing-filename-from-fd" target="_blank">eBPF SO question</a>
-          <a href="https://in.linkedin.com/in/vibhav-kanakamedala" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>Systems × AI: has he thought about kernel-level inference profiling, model-serving optimization, or efficient-inference systems work?</div>
-      </div>
-
-      <!-- 28. Rohan Bagati -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">28</div><div class="rank-delta">= #28</div></div>
-          <div class="name-block">
-            <h3 class="name">Rohan Bagati</h3>
-            <div class="pill-row">
-              <span class="pill tier-c">C-tier</span>
-              <span class="pill borderline">Pending · borderline</span>
-              <span class="pill lane">General talent</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Millennium + IITM + JEE signal. CMC scribe note. Self-stated: "projects I'll be doing in my company involves Agentic AI" — vague. HFT/Quant intent. Strong baseline; AI direction unproven.</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/rohan-bagati-b05987230" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>What's "the company" — has he started something, or interning? Where does Agentic AI fit in his quant trajectory?</div>
-      </div>
-
-      <!-- 29. Anshuman Jindal -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">29</div><div class="rank-delta">= #29</div></div>
-          <div class="name-block">
-            <h3 class="name">Anshuman Jindal</h3>
-            <div class="pill-row">
-              <span class="pill tier-c">C-tier</span>
-              <span class="pill approved">Approved</span>
-              <span class="pill lane">Quant · iGEM</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">IITM CSE, iGEM 2023 WebOps. GitHub has OptionsPricing repo plus hackathon work. Listed interest: efficiency/compression — specifically "How are the benchmarks set for AI, and to what accuracy can a model be replicated when downloaded locally." Question is interesting; no artifact for it.</p>
-        <div class="links">
-          <a href="https://github.com/anshuman-jindal" target="_blank">GitHub</a>
-          <a href="https://github.com/anshuman-jindal/OptionsPricing" target="_blank">OptionsPricing</a>
-          <a href="https://2023.igem.wiki/iit-madras/team" target="_blank">iGEM team</a>
-          <a href="https://in.linkedin.com/in/anshumanjindal" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>His benchmark/replication question is good — has he actually tried to reproduce a model locally? Llama, Mistral, anything? What was the failure mode?</div>
-      </div>
-
-      <!-- 30. Sreevasthav Ravirala -->
-      <div class="card">
-        <div class="card-head">
-          <div class="rank-block"><div class="rank">30</div><div class="rank-delta up">⇧ from #31</div></div>
-          <div class="name-block">
-            <h3 class="name">Sreevasthav Ravirala</h3>
-            <div class="pill-row">
-              <span class="pill tier-c">C-tier</span>
-              <span class="pill borderline">Pending · borderline</span>
-              <span class="pill lane">ICPC · AI safety curious</span>
-            </div>
-          </div>
-        </div>
-        <p class="intro">Cohesity intern + IITM CSE. Real ICPC team participation. Listed interests: agents, AI safety/security, RL. No public AI artifact.</p>
-        <div class="links">
-          <a href="https://in.linkedin.com/in/sreevasthav-ravirala" target="_blank">LinkedIn</a>
-        </div>
-        <div class="talk"><strong>What to talk about</strong>What does AI safety mean to him concretely — Anthropic-style mech interp, red-teaming, evals? Any project he's actually started?</div>
-      </div>
-
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Endgame for the physics foundation model stack — full neural-operator pretraining or in-context only? Where's the training data coming from? Research lab, venture-backed applied AI, or something in between?
     </div>
-  </section>
+  </div>
 
-  <!-- =============== GENERAL INVITES 31-59 =============== -->
-  <section id="general">
-    <div class="section-head">
-      <h2>General invites · 31–59</h2>
-      <span class="section-meta">Solid IITM/CS baseline but limited verified frontier-AI signal. Approve broadly; engage selectively based on in-person conversation.</span>
+  <!-- 2 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">02</span>
+      <span class="roster-name">Atreya Vedantam</span>
+      <span class="roster-meta"><span class="up">⇧ from #4</span> · codex 79 · s-tier</span>
     </div>
-    <div class="compact-grid">
-
-      <!-- 31 -->
-      <div class="compact-card">
-        <div class="compact-rank">31</div>
-        <div>
-          <h4 class="compact-name">Sri Charith Muchala</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">Cohesity + IITM CSE, ICPC registration. AI safety/agents interest, no artifact.</p>
-          <p class="compact-talk">Ask: what AI safety project would he build given a free month?</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/sri-charith-muchala-6012902a7" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 32 -->
-      <div class="compact-card">
-        <div class="compact-rank">32</div>
-        <div>
-          <h4 class="compact-name">Akshit Singh</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">WorldQuant + IITM. Pokerbots/quant activity. RL + efficiency interest, no artifact.</p>
-          <p class="compact-talk">Ask: any RL projects beyond quant? Why pokerbots specifically?</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/akshit-singh-7875282aa" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 33 -->
-      <div class="compact-card">
-        <div class="compact-rank">33</div>
-        <div>
-          <h4 class="compact-name">Aditya Jain</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill approved">Approved</span></div>
-          <p class="compact-note">Programming Club + IITM, high GPA. RL/Multimodal/Agents interest, no public work.</p>
-          <p class="compact-talk">Filter: has he reimplemented any RL paper? Which?</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/aditya-jain-92179b25b" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 34 -->
-      <div class="compact-card">
-        <div class="compact-rank">34</div>
-        <div>
-          <h4 class="compact-name">Rayapati Yeshaswini</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM CSE. Guideily / NVIDIA Inception-adjacent signal. AI lab intent.</p>
-          <p class="compact-talk">What's Guideily? What's her role?</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/yeshaswini-rayapati-4ba461269" target="_blank">LinkedIn</a>
-            <a href="https://x.com/Yeshaswini1256" target="_blank">X</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 35 -->
-      <div class="compact-card">
-        <div class="compact-rank">35</div>
-        <div>
-          <h4 class="compact-name">K V Pramodh Kumar</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM + Cohesity. GitHub has processor/ALU/DSA coursework. Self-stated agentic AI interest with right vocabulary ("collaborate with humans not just automate").</p>
-          <p class="compact-talk">What's the first agentic-AI project he'd actually ship?</p>
-          <div class="compact-links">
-            <a href="https://github.com/Bunny37P" target="_blank">GitHub</a>
-            <a href="https://in.linkedin.com/in/pramodh-kothamaddi" target="_blank">LinkedIn</a>
-            <a href="https://x.com/PramodhBunny23" target="_blank">X</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 36 -->
-      <div class="compact-card">
-        <div class="compact-rank">36</div>
-        <div>
-          <h4 class="compact-name">Jaya Vishnavi N</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">Goldman Sachs + IITM CSE. Self-stated "planning agents" interest. AI lab intent.</p>
-          <p class="compact-talk">Which planning paper has she actually read — LATS, ReAct, AlphaZero-style?</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/jaya-vishnavi-nichenametla-295b11267" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 37 -->
-      <div class="compact-card">
-        <div class="compact-rank">37</div>
-        <div>
-          <h4 class="compact-name">Pranjal Katte</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM CSE, E-Cell, quant/trading certification. Agents + efficiency + world models interest. No project.</p>
-          <p class="compact-talk">Quant vs startup vs AI eng — what's the next 12 months?</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/pranjal-katte" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 38 -->
-      <div class="compact-card">
-        <div class="compact-rank">38</div>
-        <div>
-          <h4 class="compact-name">Sriram M</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">Atlassian + IITM. AI/ML/backend mention only. AI for Science interest, no artifact.</p>
-          <p class="compact-talk">Background-check question; light invite.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/sriram-makkena-708583260" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 39 -->
-      <div class="compact-card">
-        <div class="compact-rank">39</div>
-        <div>
-          <h4 class="compact-name">Yaswanth Sai V</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">Likely IITM CSE profile, strong entrance rank. Agents + efficiency interest.</p>
-          <p class="compact-talk">Verify identity, then filter on real project.</p>
-          <div class="compact-links">
-            <a href="https://cse.iitm.ac.in/profile.php?arg=Mjg5Mg%3D%3D" target="_blank">IITM CSE</a>
-            <a href="https://linkedin.com/in/Yaswanth" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 40 -->
-      <div class="compact-card">
-        <div class="compact-rank">40</div>
-        <div>
-          <h4 class="compact-name">Arjun Ganesh</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">AI Club + IITM signal; possible GitHub. RL + inference/compression interest.</p>
-          <p class="compact-talk">What's the AI Club project he actually owns?</p>
-          <div class="compact-links">
-            <a href="https://github.com/Arjun2ganesh" target="_blank">GitHub</a>
-            <a href="https://in.linkedin.com/in/arjun-ganesh-6806012a9" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 41 -->
-      <div class="compact-card">
-        <div class="compact-rank">41</div>
-        <div>
-          <h4 class="compact-name">Shivanshu Kumar</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill approved">Approved</span></div>
-          <p class="compact-note">Undergraduate researcher signal from X mirrors. AI4Science interest, PhD intent. No output found.</p>
-          <p class="compact-talk">Which lab / project? Ask for the paper/preprint draft.</p>
-          <div class="compact-links">
-            <a href="https://linkedin.com/in/shivanshu-kumar-b4814928a" target="_blank">LinkedIn</a>
-            <a href="https://x.com/shivan123shu" target="_blank">X</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 42 -->
-      <div class="compact-card">
-        <div class="compact-rank">42</div>
-        <div>
-          <h4 class="compact-name">S Vishal</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">Goldman Sachs + IITM. "Need to know about recent developments" — exploratory, not deep. AI lab intent.</p>
-          <p class="compact-talk">Light invite; gauge in-person depth.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/vishal-senthilkumar-1a2622273" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 43 -->
-      <div class="compact-card">
-        <div class="compact-rank">43</div>
-        <div>
-          <h4 class="compact-name">Lekhana</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM CSE. GitHub coursework only. RL + multimodal interest.</p>
-          <p class="compact-talk">Any project beyond coursework?</p>
-          <div class="compact-links">
-            <a href="https://github.com/lekhanasodum" target="_blank">GitHub</a>
-            <a href="https://in.linkedin.com/in/lekhanasodum" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 44 -->
-      <div class="compact-card">
-        <div class="compact-rank">44</div>
-        <div>
-          <h4 class="compact-name">Aditya Kumar Sharma</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">E-Cell ops + Pfizer programming intern. AI for Science/RL/agents interest. No AI proof.</p>
-          <p class="compact-talk">Pfizer programming — what stack, what problem?</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/aditya-kumar-sharma-8920132a6" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 45 -->
-      <div class="compact-card">
-        <div class="compact-rank">45</div>
-        <div>
-          <h4 class="compact-name">Vaishnavi Rajesh</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill demoted">Demoted ⇩</span></div>
-          <p class="compact-note">Codex over-promoted on CivicAI-Request-Router — actually a 4-file LangGraph tutorial with 1 commit, 0 stars. IITM CSE; AI-for-networks BTP self-stated.</p>
-          <p class="compact-talk">Ask about the BTP. Skip the CivicAI thing.</p>
-          <div class="compact-links">
-            <a href="https://github.com/vaishnavi-rajesh" target="_blank">GitHub</a>
-            <a href="https://github.com/vaishnavi-rajesh/CivicAI-Request-Router" target="_blank">CivicAI repo</a>
-            <a href="https://in.linkedin.com/in/vaishnavi-rajesh-24872027a" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 46 -->
-      <div class="compact-card">
-        <div class="compact-rank">46</div>
-        <div>
-          <h4 class="compact-name">Vikash Kumar Ojha</h4>
-          <div class="compact-pills"><span class="pill tier-c">C</span><span class="pill verify">Verify identity</span></div>
-          <p class="compact-note">Same-name physics professor has strong research record — likely NOT candidate. Verify identity before considering.</p>
-          <p class="compact-talk">Identity check first; market-prediction interest is vague anyway.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/vikash-kumar-ojha-515863279" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 47 -->
-      <div class="compact-card">
-        <div class="compact-rank">47</div>
-        <div>
-          <h4 class="compact-name">Roshan Manimaran</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill demoted">Codex hallucinated</span></div>
-          <p class="compact-note"><strong>Codex claim of Auto-DeepLab/LoRA/RISC-V repos at cs22b053 is FALSE</strong> — actual repos are generic coursework (Reactjs, Chatbot_1, AI_ASSIGNMENT_02). RL/RLHF self-stated interest.</p>
-          <p class="compact-talk">Ask for the actual RL project. Don't anchor on codex's adjustment.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/roshan-m-538065245" target="_blank">LinkedIn</a>
-            <a href="https://github.com/cs22b053" target="_blank">cs22b053 GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 48 -->
-      <div class="compact-card">
-        <div class="compact-rank">48</div>
-        <div>
-          <h4 class="compact-name">Daksh Sehra</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM + Amazon ML learning activity. Little original public proof.</p>
-          <p class="compact-talk">Low priority unless demo.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/daksh-sehra-353309253" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 49 -->
-      <div class="compact-card">
-        <div class="compact-rank">49</div>
-        <div>
-          <h4 class="compact-name">Kishore Kumar E</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM CSE listed. Generic agents interest. AI lab intent.</p>
-          <p class="compact-talk">Low priority unless private evidence surfaces.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/kishore-kumar-2ab625259" target="_blank">LinkedIn</a>
-            <a href="https://www.cse.iitm.ac.in/profile.php?arg=MjkzMQ%3D%3D" target="_blank">IITM CSE</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 50 -->
-      <div class="compact-card">
-        <div class="compact-rank">50</div>
-        <div>
-          <h4 class="compact-name">Balla Surya Harshith</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">Self-stated NVIDIA system-software job + agentic interest. Not publicly corroborated. AI lab/PhD intent.</p>
-          <p class="compact-talk">Verify NVIDIA offer; if real, mid-tier-ish.</p>
-          <div class="compact-links">
-            <a href="https://linkedin.com/in/harshith-balla-355199299" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 51 -->
-      <div class="compact-card">
-        <div class="compact-rank">51</div>
-        <div>
-          <h4 class="compact-name">Battu Navya Sree</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM CSE + possible E-Cell ops. AI safety + formal verification interest. No output.</p>
-          <p class="compact-talk">Formal verification angle = potential Lean bridge if real.</p>
-          <div class="compact-links">
-            <a href="https://linkedin.com/in/navya-sree-b-9a695a258" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 52 -->
-      <div class="compact-card">
-        <div class="compact-rank">52</div>
-        <div>
-          <h4 class="compact-name">Abhishek Gurrala</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM CSE. AI4Science + RL + agents interest. No frontier-AI proof.</p>
-          <p class="compact-talk">Low priority.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/abhishek-gurrala-2b1397283" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 53 -->
-      <div class="compact-card">
-        <div class="compact-rank">53</div>
-        <div>
-          <h4 class="compact-name">Dev Mehta</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill approved">Approved</span></div>
-          <p class="compact-note">"Context graphs" interest is articulated well. Possible HF profile, weak attribution. HFT/Quant intent.</p>
-          <p class="compact-talk">What's a context graph in his framing? Has he prototyped one?</p>
-          <div class="compact-links">
-            <a href="https://huggingface.co/devmehta787" target="_blank">Possible HF</a>
-            <a href="https://in.linkedin.com/in/dev-mehta-304626250" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 54 -->
-      <div class="compact-card">
-        <div class="compact-rank">54</div>
-        <div>
-          <h4 class="compact-name">Paandu</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM CSE. No AI/security/AI4Science artifact.</p>
-          <p class="compact-talk">Low priority.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/paandu-banoth-4a78a236b" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 55 -->
-      <div class="compact-card">
-        <div class="compact-rank">55</div>
-        <div>
-          <h4 class="compact-name">Devi Sumanth Ghanta</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill approved">Approved</span></div>
-          <p class="compact-note">IITM CSE. Agents + safety interest. No artifact.</p>
-          <p class="compact-talk">Low priority.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/sumanth-ghanta-801857268" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 56 -->
-      <div class="compact-card">
-        <div class="compact-rank">56</div>
-        <div>
-          <h4 class="compact-name">Anjali Samudrala</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">Codeforces + IITM signal; LinkedIn masked. AI safety interest. No artifact.</p>
-          <p class="compact-talk">Why the masked LinkedIn? Verify the Codeforces handle is hers.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/anjali-samudrala-xxxx2106" target="_blank">LinkedIn</a>
-            <a href="https://codeforces.com/profile/anjali21" target="_blank">Codeforces</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 57 -->
-      <div class="compact-card">
-        <div class="compact-rank">57</div>
-        <div>
-          <h4 class="compact-name">Riddhi</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill approved">Approved</span></div>
-          <p class="compact-note">IITM CSE. RL + agents interest. No artifact.</p>
-          <p class="compact-talk">Low priority.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/riddhi-agarwal-bb839025a" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 58 -->
-      <div class="compact-card">
-        <div class="compact-rank">58</div>
-        <div>
-          <h4 class="compact-name">Jwala Likhitha Reddy Mandalapu</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill borderline">Pending</span></div>
-          <p class="compact-note">IITM CSE. Multimodal interest. No artifact.</p>
-          <p class="compact-talk">Low priority.</p>
-          <div class="compact-links">
-            <a href="https://in.linkedin.com/in/jwala-likhitha-mandalapu-275739268" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 59 -->
-      <div class="compact-card">
-        <div class="compact-rank">59</div>
-        <div>
-          <h4 class="compact-name">Aditya Srivastava</h4>
-          <div class="compact-pills"><span class="pill tier-low">Low</span><span class="pill approved">Approved</span></div>
-          <p class="compact-note">Identity could not be corroborated. Formal verification + AI4Science + safety interest stated.</p>
-          <p class="compact-talk">Verify identity first.</p>
-          <div class="compact-links">
-            <a href="https://linkedin.com/in/aditya-srivastava-028137260" target="_blank">LinkedIn</a>
-          </div>
-        </div>
-      </div>
-
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">generalization</span>
+      <span class="tag lane">mech interp</span>
     </div>
-  </section>
-
-  <!-- =============== METHODOLOGY =============== -->
-  <section id="flags">
-    <div class="section-head">
-      <h2>Methodology flags</h2>
-      <span class="section-meta">What was checked, what was caught, what to remember.</span>
+    <p class="roster-intro">
+      Two verified arXiv papers: <em>Grokking in Linear Models for Logistic Regression</em> (2nd author with Chandrashekar Lakshminarayanan) and a single-author <em>Characterization of Blind Code Rate Recovery</em>. Self-described foundational interest in grokking and privacy attacks. Pure research/PhD intent.
+    </p>
+    <div class="verify-line ok">✓ both arxiv papers + author position confirmed</div>
+    <div class="roster-links">
+      <a class="primary" href="https://arxiv.org/abs/2602.08302">grokking paper</a>
+      <a href="https://arxiv.org/abs/2603.02031">blind code rate paper</a>
+      <a href="https://in.linkedin.com/in/atreya-vedantam-249890276">linkedin</a>
     </div>
-    <footer>
-      <h3>What we verified</h3>
-      <ul>
-        <li><strong>All 7 top-tier arXiv papers checked at source</strong> — codex did NOT hallucinate any of them. IDs and authors confirmed: 2509.16369, 2510.02742, 2602.08302, 2603.02031, 2605.07386, 2603.20671, 2507.05146.</li>
-        <li><strong>Jay Gupta's DeepMind claim confirmed</strong> via Google's LinkedIn snippet — biggest single ranking move (rank 9 → 4).</li>
-        <li><strong>Vaibhav Shivrain's Sinha Lab DDP role confirmed</strong> on the IITM lab people page — upgrade from B-tier to A-tier.</li>
-        <li><strong>Akshay Govind's physics foundation models work confirmed</strong> via his personal site, NeurIPS 2025 workshop reference, and arXiv. Moved to rank 1 for the model-layer thesis.</li>
-      </ul>
-      <h3 style="margin-top: 16px;">What codex got wrong</h3>
-      <ul>
-        <li><strong>cs22b053 GitHub repos (Roshan Manimaran) — hallucinated.</strong> Codex claimed Auto-DeepLab/LoRA/RISC-V; actual repos are coursework. Do not promote on codex's "second-pass" GitHub finds without checking the URL first.</li>
-        <li><strong>CivicAI-Request-Router (Vaishnavi Rajesh)</strong> exists but is a 4-file LangGraph tutorial, not a "missed agentic-AI-adjacent project." Sophistication claim inflated.</li>
-        <li><strong>Naveen Chavali's "Linux-capable RISC-V SoC"</strong> not visible on his public GitHub. Either private or overstated. Verify live.</li>
-        <li><strong>Karthik Cheripelly "building Gaara AI"</strong> — codex took LinkedIn at face value; Gaara AI's site doesn't list him. Verify role.</li>
-        <li><strong>Achintya Jai framed as "AI safety builder"</strong> — public artifacts are all classical cybersec / OSINT. His formal-verification interest is the actual bridge to portfolio (Lean tax-law).</li>
-      </ul>
-      <h3 style="margin-top: 16px;">Pending → Approve recommendations</h3>
-      <ul>
-        <li><strong>Strongly approve:</strong> Vaibhav Shivrain (#7), Madhav Bhardwaj (#9), Shanmukh raj MSS (#11), Vignesh Gaikoti (#17), Rohan Kadam (#24).</li>
-        <li><strong>Approve if seats:</strong> Sharmil Kumar Basa (#13), Tallapaneni Subhash Ram (#18), Mahandeep Parida (#16).</li>
-        <li><strong>Approve if room:</strong> Sai Srikar (#23), Harsh Vardhan Daga (#26), Vibhav Kanakamedala (#27), Rohan Bagati (#28), Sreevasthav Ravirala (#30).</li>
-      </ul>
-      <p style="margin-top: 14px; color: var(--muted); font-size: 0.82rem;">
-        Source: <a href="../frontier_ai_full_ranked_report.md" style="color: var(--brand-ink);">codex original report</a> +
-        <a href="../files-mentioned-by-the-user-cracked/frontier_ai_verification_audit.md" style="color: var(--brand-ink);">verification audit</a>. Date: 2026-05-13.
-      </p>
-    </footer>
-  </section>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Interpretability, evals, or model science — which one captures him most? Which open question would he want a PhD around?
+    </div>
+  </div>
 
-</div>
+  <!-- 3 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">03</span>
+      <span class="roster-name">J Vijayavallabh <span class="muted small">(Jayamanikandan)</span></span>
+      <span class="roster-meta"><span class="down">⇩ from #1</span> · codex 90 · s-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">multimodal</span>
+      <span class="tag lane">agentic rag</span>
+    </div>
+    <p class="roster-intro">
+      <strong>First author of ICCVW 2025 "Sparse Hyperbolic Convolutional Networks with Enhanced Object Localization via GradCAM Analysis"</strong> (with Prof. Raghunathan Rengaswamy). Named on Multi-HyDE Financial RAG paper. HuggingFace artifacts are RL coursework — not original research — but the arXiv work is real.
+      Best <em>general</em> frontier-AI score in the pool; less directly on-thesis than Akshay.
+    </p>
+    <div class="verify-line ok">✓ iccvw 2025 first author + multi-hyde author confirmed</div>
+    <div class="roster-links">
+      <a class="primary" href="https://arxiv.org/abs/2509.16369">multi-hyde</a>
+      <a href="https://dblp.org/rec/conf/iccv/JayamanikandanSRR25">iccvw 2025</a>
+      <a href="https://huggingface.co/jvv7">hf</a>
+      <a href="https://in.linkedin.com/in/j-vijayavallabh">linkedin</a>
+      <a href="https://x.com/J_V_V_07">x</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Walk through his exact contribution on Multi-HyDE vs ICCVW — last-author position on RAG paper suggests senior role. What's next: lab, startup, AI lab?
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">04</span>
+      <span class="roster-name">Jay Gupta</span>
+      <span class="roster-meta"><span class="up">⇧⇧ from #9</span> · codex 68 · a-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">world models</span>
+      <span class="tag lane">neural operators</span>
+      <span class="tag lane">deepmind</span>
+    </div>
+    <p class="roster-intro">
+      <strong>DeepMind claim verified via Google's LinkedIn snippet</strong> ("Jay Gupta has experience at Google DeepMind and received education from IIT Madras"). Self-stated interests span world models, AI for Science, RL, AI hardware, Agents. Codex flagged "Medium confidence" because no public papers/repos surfaced — but the DeepMind credential alone elevates this above most A-tier picks.
+    </p>
+    <div class="verify-line ok">✓ deepmind + iitm confirmed via websearch · artifacts not public</div>
+    <div class="roster-links">
+      <a class="primary" href="https://in.linkedin.com/in/jay-gupta-4992b4234">linkedin</a>
+      <a href="https://x.com/jay_gupta_s">x</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      What did he ship at DeepMind? Is the interest closer to neural operators (Akshay's neighborhood) or to world-model rollouts (Genie-style)? Most leveraged single conversation in the room.
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">05</span>
+      <span class="roster-name">Utkarsh Bheemanaboyna</span>
+      <span class="roster-meta">= #5 · codex 77 · a-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">multimodal</span>
+      <span class="tag lane">explainability</span>
+    </div>
+    <p class="roster-intro">
+      3rd author on the verified <strong>VERITAS paper</strong> — AI-generated image detection with human-readable artifact explanations. Public code, HuggingFace paper page, AI Club IITM signal. Self-stated direction: VLAs/VLMs, multimodal, efficiency/compression.
+    </p>
+    <div class="verify-line ok">✓ veritas paper + author position confirmed</div>
+    <div class="roster-links">
+      <a class="primary" href="https://arxiv.org/abs/2507.05146">veritas arxiv</a>
+      <a href="https://github.com/V-i-g-n-e-s-h-N/VERITAS">github</a>
+      <a href="https://huggingface.co/papers/2507.05146">hf paper</a>
+      <a href="https://in.linkedin.com/in/utkarsh-bheemanaboyna-138a292b1">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Specific contribution on VERITAS? Interested in extending to video / VLAs? Where does VLM interpretability rank vs raw capability for him?
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">06</span>
+      <span class="roster-name">Karthick Krishna M <span class="muted small">(Mahendran)</span></span>
+      <span class="roster-meta"><span class="up">⇧ from #7</span> · codex 74 · a-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">optimization</span>
+      <span class="tag lane">generative ml</span>
+    </div>
+    <p class="roster-intro">
+      Two verified 2026 arXiv papers on online convex optimization (with Prof. Rahul Vaze). Codex framed him as pure theory — actually his GitHub has <strong>Deepfake Detection, Facial Expression Recognition, and forked denoising-diffusion-pytorch.</strong> Real ML implementation alongside the optimization theory.
+    </p>
+    <div class="verify-line ok">✓ 2 arxiv + ml implementation repos confirmed</div>
+    <div class="roster-links">
+      <a class="primary" href="https://krishnap25.github.io/group">research group</a>
+      <a href="https://arxiv.org/abs/2605.07386">arxiv 2605.07386</a>
+      <a href="https://arxiv.org/abs/2603.20671">arxiv 2603.20671</a>
+      <a href="https://github.com/KarthickKrishnaM">github</a>
+      <a href="https://in.linkedin.com/in/karthick-krishna-m-454777225">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      How does online convex optimization connect to modern ML? Diffusion in his repo suggests bridging — which bridge does he want to build?
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">07</span>
+      <span class="roster-name">Vaibhav Shivrain</span>
+      <span class="roster-meta"><span class="up">⇧⇧ from #13</span> · codex 61 · a-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approve-now">pending → approve</span>
+      <span class="tag lane">ai for science</span>
+      <span class="tag lane">computational bio</span>
+    </div>
+    <p class="roster-intro">
+      <strong>Confirmed on Prof. Sinha's Systems Genetics Lab page</strong> as a Dual Degree Programme researcher on "Large scale yeast metabolic modelling."
+      Together Fund + Charpak Fellowship signals. Self-stated: "machine learning models for metabolic modelling and reasoning" with startup intent.
+      The AI-for-bio neighborhood your portfolio already lives in.
+    </p>
+    <div class="verify-line ok">✓ sinha lab ddp role verified · confidence should be high, not medium</div>
+    <div class="roster-links">
+      <a class="primary" href="https://home.iitm.ac.in/sinha/people.html">sinha lab page</a>
+      <a href="https://in.linkedin.com/in/vaibhav-shivrain18">linkedin</a>
+      <a href="https://x.com/Vaibnof">x</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Is the yeast metabolic modeling heading toward a learned foundation model for cellular biology, or staying classical SBML / FBA? Has he looked at Evo / scGPT / Geneformer? Where on the wet-lab ↔ pure-ML axis?
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">08</span>
+      <span class="roster-name">Naveen Chavali</span>
+      <span class="roster-meta"><span class="down">⇩ from #6</span> · codex 76 · a-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-verify">verify in person</span>
+      <span class="tag lane">edge inference</span>
+      <span class="tag lane">risc-v</span>
+    </div>
+    <p class="roster-intro">
+      Codex called him an "exceptional hardware builder." GitHub <span class="mono">chvsnaveen12</span> shows 8-bit-CMOS-Computer, Pulse-Generator, RC-glider — <strong>no RISC-V SoC or matmul unit visible</strong>, contrary to his confident application text. Either private, on Medium (couldn't fetch), or overstated. Edge silicon IS the substrate the model layer runs on — not off-thesis; the artifact gap needs resolving live.
+    </p>
+    <div class="verify-line warn">⚠ "linux-capable risc-v soc" claim not visible on public github</div>
+    <div class="roster-links">
+      <a href="https://github.com/chvsnaveen12">github</a>
+      <a href="https://medium.com/naveen-projects">medium</a>
+      <a href="https://medium.com/naveen-projects/3d-printer-d02172fc8f45">3d printer post</a>
+      <a href="https://linkedin.com/in/naveen-chavali-4300b222b">linkedin</a>
+      <a href="https://x.com/chvsnaveen12">x</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Walk through the SoC on a laptop. Is it Linux-booting yet? Matmul unit implemented or still RTL drafts? Private repo invite welcomed.
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">09</span>
+      <span class="roster-name">Madhav Bhardwaj</span>
+      <span class="roster-meta"><span class="up">⇧⇧ from #19</span> · codex 52 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approve-now">pending → approve</span>
+      <span class="tag lane">snn</span>
+      <span class="tag lane">efficient architectures</span>
+    </div>
+    <p class="roster-intro">
+      <strong>JEE Main AIR 25, JEE Advanced AIR 126, KVPY scholar, IITM CSE, high CGPA</strong> — academic baseline at the ceiling of measurable Indian talent.
+      Self-stated: "SNNs and their usage in transformer architecture… energy efficiency of language models." Research/PhD intent. No public artifact yet, but the right interest pointed at the right architecture frontier.
+    </p>
+    <div class="verify-line warn">⚠ no public snn artifact — high-baseline, no-build profile. high ev invite.</div>
+    <div class="roster-links">
+      <a class="primary" href="https://in.linkedin.com/in/madhav-bhardwaj-mln">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Walk through his SNN reading list — Spikformer, Spike-driven Transformer V2, Meta-SpikeFormer? Picked a thesis question, or still in survey mode? Show him the gap between "energy efficiency" and "neuromorphic chip co-design" framings — see which lights him up.
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="roster-card" data-tier="1">
+    <div class="roster-head">
+      <span class="roster-rank">10</span>
+      <span class="roster-name">Achintya Jai</span>
+      <span class="roster-meta"><span class="down">⇩⇩ from #3</span> · codex 82 · s-tier (general)</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">formal verification</span>
+      <span class="tag lane">cybersec</span>
+      <span class="tag lane">owasp</span>
+    </div>
+    <p class="roster-intro">
+      Strong builder — <strong>OWASP Nettacker (5.2k★)</strong>, open-atlas OSINT (80★), TerminAI, pyba. But classical cybersecurity, NOT LLM safety / mech interp despite codex's framing. Application interests include <strong>formal verification</strong> — which bridges directly to your Lean tax-law portfolio. Don't expect AI-control depth; do expect serious-builder depth that could pivot.
+    </p>
+    <div class="verify-line bad">⚠ codex framed as ai-safety; actual artifacts are cybersec/osint. formal-verif thread is the real bridge.</div>
+    <div class="roster-links">
+      <a class="primary" href="https://github.com/pUrGe12">github</a>
+      <a href="https://purge12.github.io/">website</a>
+      <a href="https://devpost.com/helloitsme0218">devpost</a>
+      <a href="https://nest.owasp.org/members/pUrGe12">owasp</a>
+      <a href="https://in.linkedin.com/in/achintya-jai">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Formal verification — has he played with Lean, Coq, or TLA+? I'm asking because of a portfolio project formalizing US tax law in Lean. Separately: has he ported any Nettacker / OSINT tooling toward LLM-agent red-teaming?
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!--  11-30 STRONG INVITES                -->
+  <!-- ════════════════════════════════════ -->
+  <h2>Strong invites — 11 through 30</h2>
+  <p class="small muted">Solid signal, often with verification asterisks. Talking points target the missing piece.</p>
+
+  <!-- 11 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">11</span>
+      <span class="roster-name">Shanmukh raj MSS</span>
+      <span class="roster-meta"><span class="down">⇩ from #10</span> · codex 64 · a-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approve-now">pending → approve</span>
+      <span class="tag lane">applied ai</span>
+      <span class="tag lane">builder</span>
+    </div>
+    <p class="roster-intro">
+      Strongest <em>shipper</em> signal in the pool — 50 GitHub repos, real PyPI packages (<span class="mono">isql-kernel</span>), KhetAI agriculture platform, ISQL multi-kernel Jupyter, ML pricing with heavy feature engineering. CodeChef problem-setter. Less foundation-model focused; pure execution.
+    </p>
+    <div class="verify-line ok">✓ pypi packages + multi-kernel work confirmed</div>
+    <div class="roster-links">
+      <a class="primary" href="https://github.com/ShanmukhEstrella">github</a>
+      <a href="https://pypi.org/user/Scintillator_Sha/">pypi</a>
+      <a href="https://pypi.org/project/isql-kernel/">isql-kernel</a>
+      <a href="https://in.linkedin.com/in/shanmukh-raj-mss-b3903a250">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Which of the 50 repos is he proudest of, and why? Biggest production problem he's solved end-to-end? Where next — applied AI startup, infra, agents?
+    </div>
+  </div>
+
+  <!-- 12 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">12</span>
+      <span class="roster-name">Kailash Gopal D</span>
+      <span class="roster-meta"><span class="down">⇩ from #8</span> · codex 70 · a-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">theory</span>
+      <span class="tag lane">algorithms</span>
+    </div>
+    <p class="roster-intro">
+      Strong theory trajectory: IITM Theory Group, TTIC annual report mention, IISc internship with Prof. Arindam Khan on algorithms. Pseudorandomness/complexity. Off-thesis for foundation models, but the kind of theorist who could turn into an evals or model-science contributor.
+    </p>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/kailash-gopal">linkedin</a>
+      <a href="https://www.cse.iitm.ac.in/~theory/viewpeople.php?alumni=0&peopletype=8%2C9">iitm theory</a>
+      <a href="https://ttic.edu/dl/annual_report.pdf">ttic report</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Does he want to apply theory to AI — evals, complexity of reasoning, sample complexity for foundation models? Or stay in pure complexity?
+    </div>
+  </div>
+
+  <!-- 13 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">13</span>
+      <span class="roster-name">Sharmil Kumar Basa</span>
+      <span class="roster-meta"><span class="up">⇧ from #18</span> · codex 53 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approve-now">pending → approve (if seats)</span>
+      <span class="tag lane">mech interp</span>
+      <span class="tag lane">llm reasoning</span>
+    </div>
+    <p class="roster-intro">
+      Self-reported "Frontier AI hackathon placement" and "Qiskit winner" — no public corroboration found in searches. Stated direction: "Exploring reasoning capabilities and interpretability of LLMs." Startup intent. Mech interp is on-thesis even if the credentials are softer than claimed.
+    </p>
+    <div class="verify-line warn">⚠ both hackathon claims unverified — ask for links</div>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/sharmil-kumar-basa">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Which frontier AI hackathon and what was the project? Which mech-interp paper has he actually re-implemented (this filters fast)?
+    </div>
+  </div>
+
+  <!-- 14 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">14</span>
+      <span class="roster-name">Aditya Palwe</span>
+      <span class="roster-meta"><span class="down">⇩ from #11</span> · codex 62 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">voice ai</span>
+      <span class="tag lane">applied</span>
+    </div>
+    <p class="roster-intro">
+      Smallest.ai blog credit on emotion detection in STT (blog returned 403 to scraper — couldn't independently verify authorship). Rubrik intern + IITM. Open-source voice AI cookbook credit. Listed interest is formal verification; lived work is voice agents.
+    </p>
+    <div class="verify-line warn">⚠ smallest.ai blog authorship not independently confirmed</div>
+    <div class="roster-links">
+      <a class="primary" href="https://smallest.ai/blog/how-emotion-detection-is-reshaping-voice-ai-%28and-how-traditional-stt-leaves-it-behind%29">smallest.ai blog</a>
+      <a href="https://in.linkedin.com/in/aditya-palwe">linkedin</a>
+      <a href="https://x.com/AytidaXd">x</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Which part of the Pulse STT pipeline did he ship? Voice AI is a crowded vertical — what's his angle?
+    </div>
+  </div>
+
+  <!-- 15 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">15</span>
+      <span class="roster-name">Karthik Cheripelly</span>
+      <span class="roster-meta"><span class="down">⇩ from #12</span> · codex 62 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-verify">verify role</span>
+      <span class="tag lane">cv product</span>
+      <span class="tag lane">sports</span>
+    </div>
+    <p class="roster-intro">
+      LinkedIn says "Building Gaara AI" — real product with credible MediaPipe + LSTM stack and Nirmaan/NVIDIA Inception support. <strong>He's NOT mentioned anywhere on the Gaara AI website.</strong> Either co-founder not yet listed, early eng, or overstating. Product-layer, not model-layer.
+    </p>
+    <div class="verify-line warn">⚠ codex took linkedin at face value — gaara ai site doesn't list him</div>
+    <div class="roster-links">
+      <a class="primary" href="https://www.gaaraai.com">gaara ai</a>
+      <a href="https://in.linkedin.com/company/gaaraai">gaara linkedin</a>
+      <a href="https://in.linkedin.com/in/karthik-cheripelly-708847252">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Actual role/equity at Gaara AI? How much of the MediaPipe + LSTM stack did he personally build?
+    </div>
+  </div>
+
+  <!-- 16 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">16</span>
+      <span class="roster-name">Mahandeep Parida</span>
+      <span class="roster-meta"><span class="down">⇩ from #14</span> · codex 58 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-borderline">pending · borderline</span>
+      <span class="tag lane">general talent</span>
+    </div>
+    <p class="roster-intro">
+      Strong olympiad + Codeforces signal. Devpost "Salvage Diabetic Limbs" = Flask app wrapping Google Gemini Vision API. GitHub: Bank-Fraud-Detection, Crypto-Trading-Strategies, scalar pipelined processor sim, bioinformatics. AI work mostly API-wrappers, not model layer.
+    </p>
+    <div class="roster-links">
+      <a href="https://github.com/Mahandeep">github</a>
+      <a href="https://codeforces.com/profile/buburibu1234">codeforces</a>
+      <a href="https://devpost.com/software/salvage-diabetic-limbs">devpost</a>
+      <a href="https://in.linkedin.com/in/mahandeep-parida-417466252">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      "AI pet" idea is vague — pin him down. Simplest version that would impress a 12-year-old? Model layer he'd build vs API plumbing?
+    </div>
+  </div>
+
+  <!-- 17 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">17</span>
+      <span class="roster-name">Vignesh Gaikoti</span>
+      <span class="roster-meta"><span class="up">⇧ from #21</span> · codex 51 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approve-now">pending → approve</span>
+      <span class="tag lane">systems</span>
+      <span class="tag lane">compilers</span>
+    </div>
+    <p class="roster-intro">
+      Google intern + IITM. Real systems work verified: <strong>Scalar-Pipelined-Processor (C++ with README and sample inputs), MiniC-to-x86-Assembly compiler, Huffman compression.</strong> No AI artifacts yet. Compiler + processor pairing is rare and signals depth.
+    </p>
+    <div class="verify-line ok">✓ all 3 second-pass github repos verified substantive</div>
+    <div class="roster-links">
+      <a class="primary" href="https://github.com/VigneshGaikoti">github</a>
+      <a href="https://github.com/VigneshGaikoti/Scalar-Pipelined-Processor">pipeline processor</a>
+      <a href="https://github.com/VigneshGaikoti/MiniC-to-x86-Assembly">minic compiler</a>
+      <a href="https://in.linkedin.com/in/vignesh-gaikoti-04a134283">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Systems × AI: CUDA kernel-level work? ML compilers (Triton, MLIR)? Efficient inference? Where does the compiler interest pull him next?
+    </div>
+  </div>
+
+  <!-- 18 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">18</span>
+      <span class="roster-name">Tallapaneni Subhash Ram</span>
+      <span class="roster-meta"><span class="up">⇧ from #24</span> · codex 49 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approve-now">pending → approve (if seats)</span>
+      <span class="tag lane">mcp</span>
+      <span class="tag lane">agents</span>
+    </div>
+    <p class="roster-intro">
+      Self-stated: "Optimization of MCP server pipelines for AI agent systems — especially reducing tool latency and improving context orchestration reliability for multi-step reasoning workflows." Vocabulary is unusually precise. Elite IITM CSE entrance rank, Codeforces Pupil. No public MCP artifact.
+    </p>
+    <div class="verify-line warn">⚠ vocabulary suggests depth; no public artifact to verify</div>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/subhashram236">linkedin</a>
+      <a href="https://codeforces.com/profile/sRT_1037">codeforces</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Walk through a specific MCP server he's profiled — where are the latency bottlenecks? Benchmarked anything (Anthropic's MCP servers, custom)? Private repo?
+    </div>
+  </div>
+
+  <!-- 19 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">19</span>
+      <span class="roster-name">Shrijith Belagur</span>
+      <span class="roster-meta"><span class="down">⇩ from #15</span> · codex 58 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">ai club</span>
+      <span class="tag lane">microsoft</span>
+    </div>
+    <p class="roster-intro">
+      Microsoft intern + IITM. AI Club coordinator signal. Listed on an IITM teaching course page. Broad self-stated interest across agents, world models, multimodal, efficiency, hardware, mech interp, RL — wide net, still exploring. No public AI repo/paper.
+    </p>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/shrijith-belagur-428625248">linkedin</a>
+      <a href="https://courses.iitm.ac.in/course/info.php?id=11108">iitm course</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      AI Club's biggest current project — and his role in it? Forced to pick ONE of eight listed interests for 12 months — which?
+    </div>
+  </div>
+
+  <!-- 20 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">20</span>
+      <span class="roster-name">Vedang Bahuguna</span>
+      <span class="roster-meta"><span class="down">⇩ from #16</span> · codex 55 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">quant</span>
+      <span class="tag lane">systems</span>
+    </div>
+    <p class="roster-intro">
+      D. E. Shaw intern, strong CS/quant baseline. Interests: agents, efficiency/compression, AI safety, formal verification, HFT/startup paths. No public AI artifact — quant trajectory dominates visible signal.
+    </p>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/vedang-bahuguna-6747b4269">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Quant vs AI startup vs AI lab — what does the optionality look like? Formal verification interest interesting alongside HFT — Lean tax-law bridge?
+    </div>
+  </div>
+
+  <!-- 21 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">21</span>
+      <span class="roster-name">Yashvardhan Toshniwal</span>
+      <span class="roster-meta"><span class="down">⇩ from #17</span> · codex 54 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">agentic</span>
+      <span class="tag lane">safety-curious</span>
+    </div>
+    <p class="roster-intro">
+      Strong IITM CSE / GPA / Millennium School. Sincere written interest in AGI safety and MCP — references Anthropic's mithos sandbox-break news with the right framing. HFT/Quant intent. No public AI artifact yet.
+    </p>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/yashvardhan-toshniwal-532b48258">linkedin</a>
+      <a href="https://www.cse.iitm.ac.in/tablelistpeople.php?+page=4&arg=U3R1ZGVudHMhMTUkMA%3D%3D&ipp=50">iitm cse</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      The mithos question is the right question — how does HE answer it? Built any MCP tools or agent automations of his own?
+    </div>
+  </div>
+
+  <!-- 22 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">22</span>
+      <span class="roster-name">Mihir Vaishampayan</span>
+      <span class="roster-meta"><span class="down">⇩ from #20</span> · codex 51 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">quant</span>
+      <span class="tag lane">mech-interp-curious</span>
+    </div>
+    <p class="roster-intro">
+      Tower Research, JEE Advanced AIR 123. Self-stated mech interp interest but "nothing particular as of now" in active building. HFT/Quant trajectory. Strong baseline; AI motivation unverified.
+    </p>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/mihir-rohit-vaishampayan-32810925a">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      What pulled him to mech interp first? Read Anthropic's circuit work or just heard about it? Quant career a hard yes, or still considering AI labs?
+    </div>
+  </div>
+
+  <!-- 23 -->
+  <div class="roster-card" data-tier="3">
+    <div class="roster-head">
+      <span class="roster-rank">23</span>
+      <span class="roster-name">Sai Srikar Koushik Chittabattula</span>
+      <span class="roster-meta"><span class="up">⇧ from #26</span> · codex 47 · c-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-borderline">pending · borderline</span>
+      <span class="tag lane">samsung r&amp;d</span>
+    </div>
+    <p class="roster-intro">
+      Samsung R&amp;D MAGPIE intern + Pravartak fellowship — both real, competitive programs. GitHub <span class="mono">cs22b070</span> has <strong>only one repo (`demo`)</strong> which is concerning given the resume. Either NDA, or the credential is the whole signal.
+    </p>
+    <div class="verify-line warn">⚠ strong credentials, near-zero public output</div>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/sai-srikar-koushik-chittabattula-193730262">linkedin</a>
+      <a href="https://github.com/cs22b070">github</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      MAGPIE project (NDA-permitting)? Why so little public code given strong internships?
+    </div>
+  </div>
+
+  <!-- 24 -->
+  <div class="roster-card" data-tier="3">
+    <div class="roster-head">
+      <span class="roster-rank">24</span>
+      <span class="roster-name">Rohan Kadam</span>
+      <span class="roster-meta"><span class="up">⇧ from #27</span> · codex 47 · c-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approve-now">pending → approve</span>
+      <span class="tag lane">formal verif</span>
+      <span class="tag lane">systems</span>
+    </div>
+    <p class="roster-intro">
+      cs22b083 GitHub has a real <strong>OCaml lock-free synchronous dual queue project</strong> with TSAN race detection, QCheck-Lin tests, and a benchmark harness. Plus a CircuitVerse SAP-1 CPU. Listed interests include <strong>formal verification</strong> — direct bridge to your Lean tax-law portfolio.
+    </p>
+    <div class="verify-line ok">✓ ocaml concurrency project verified substantive</div>
+    <div class="roster-links">
+      <a class="primary" href="https://github.com/cs22b083/CS6868_Project">ocaml project</a>
+      <a href="https://github.com/cs22b083">github</a>
+      <a href="https://www.cse.iitm.ac.in/profile.php?arg=Mjk3Mw%3D%3D">iitm cse</a>
+      <a href="https://in.linkedin.com/in/rohan-kadam-6b5524254">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Explored Lean or Coq? Concurrency correctness work is a stone's throw from formal verification — would he be interested in auto-formalizing legal/tax/regulatory rules?
+    </div>
+  </div>
+
+  <!-- 25 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">25</span>
+      <span class="roster-name">Parva Satodia</span>
+      <span class="roster-meta"><span class="down">⇩ from #22</span> · codex 50 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">cp expert</span>
+      <span class="tag lane">many interests</span>
+    </div>
+    <p class="roster-intro">
+      Programming Club, <strong>Codeforces Expert</strong>, strong JEE ranks. Listed interests are across <em>everything</em> AI (agents, world models, multimodal, mech interp, RL, safety, efficiency, AI for science) — wide-net signal. No public AI project.
+    </p>
+    <div class="roster-links">
+      <a href="https://codeforces.com/profile/parvasatodia">codeforces</a>
+      <a href="https://in.linkedin.com/in/parva-satodia-15a6b4286">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Forced to pick one direction for 12 months from her listed 8 — which? Research internship over an AI Club project?
+    </div>
+  </div>
+
+  <!-- 26 -->
+  <div class="roster-card" data-tier="2">
+    <div class="roster-head">
+      <span class="roster-rank">26</span>
+      <span class="roster-name">Harsh Vardhan Daga</span>
+      <span class="roster-meta"><span class="down">⇩ from #23</span> · codex 50 · b-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-borderline">pending · borderline</span>
+      <span class="tag lane">optimization</span>
+    </div>
+    <p class="roster-intro">
+      Millennium School + IITM CSE. UGRC under Prof. Rupesh Nasre on emission-optimizing CVRP — real undergraduate research with a named PI. Interests: AI for Science, Multimodal, Agents. HFT/startup paths.
+    </p>
+    <div class="roster-links">
+      <a href="https://www.cse.iitm.ac.in/~rupesh/?mode=Mentoring">ugrc listing</a>
+      <a href="https://in.linkedin.com/in/harsh-vardhan-daga">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      How does CVRP optimization translate to ML? Has he thought about learned solvers (NeurIPS ML4CO work)?
+    </div>
+  </div>
+
+  <!-- 27 -->
+  <div class="roster-card" data-tier="3">
+    <div class="roster-head">
+      <span class="roster-rank">27</span>
+      <span class="roster-name">Vibhav Kanakamedala</span>
+      <span class="roster-meta"><span class="down">⇩ from #25</span> · codex 47 · c-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-borderline">pending · borderline</span>
+      <span class="tag lane">kernel/ebpf</span>
+    </div>
+    <p class="roster-intro">
+      AWS intern + IITM. eBPF/kernel-tracing curiosity on StackOverflow — unusual depth for an undergrad. Listed AI interests in RL and multimodal. No AI artifacts; systems specialist whose AI intent is unproven.
+    </p>
+    <div class="roster-links">
+      <a href="https://stackoverflow.com/questions/79259950/ebpf-accessing-filename-from-fd">ebpf so question</a>
+      <a href="https://in.linkedin.com/in/vibhav-kanakamedala">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      Systems × AI: kernel-level inference profiling? Model-serving optimization? Efficient-inference systems work?
+    </div>
+  </div>
+
+  <!-- 28 -->
+  <div class="roster-card" data-tier="3">
+    <div class="roster-head">
+      <span class="roster-rank">28</span>
+      <span class="roster-name">Rohan Bagati</span>
+      <span class="roster-meta">= #28 · codex 45 · c-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-borderline">pending · borderline</span>
+      <span class="tag lane">general talent</span>
+    </div>
+    <p class="roster-intro">
+      Millennium + IITM + JEE signal. CMC scribe note. Self-stated: "projects I'll be doing in my company involves Agentic AI" — vague. HFT/Quant intent. Strong baseline; AI direction unproven.
+    </p>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/rohan-bagati-b05987230">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      What's "the company" — has he started something, or interning? Where does Agentic AI fit his quant trajectory?
+    </div>
+  </div>
+
+  <!-- 29 -->
+  <div class="roster-card" data-tier="3">
+    <div class="roster-head">
+      <span class="roster-rank">29</span>
+      <span class="roster-name">Anshuman Jindal</span>
+      <span class="roster-meta">= #29 · codex 45 · c-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-approved">approved</span>
+      <span class="tag lane">quant</span>
+      <span class="tag lane">igem</span>
+    </div>
+    <p class="roster-intro">
+      IITM CSE, iGEM 2023 WebOps. GitHub has OptionsPricing repo + hackathon work. Listed interest: efficiency/compression — specifically "How are benchmarks set for AI, and to what accuracy can a model be replicated when downloaded locally." Good question; no artifact for it.
+    </p>
+    <div class="roster-links">
+      <a href="https://github.com/anshuman-jindal">github</a>
+      <a href="https://github.com/anshuman-jindal/OptionsPricing">optionspricing</a>
+      <a href="https://2023.igem.wiki/iit-madras/team">igem team</a>
+      <a href="https://in.linkedin.com/in/anshumanjindal">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      His benchmark/replication question is good — has he actually tried to reproduce a model locally? Llama, Mistral, anything? Failure mode?
+    </div>
+  </div>
+
+  <!-- 30 -->
+  <div class="roster-card" data-tier="3">
+    <div class="roster-head">
+      <span class="roster-rank">30</span>
+      <span class="roster-name">Sreevasthav Ravirala</span>
+      <span class="roster-meta"><span class="up">⇧ from #31</span> · codex 44 · c-tier</span>
+    </div>
+    <div class="roster-tags">
+      <span class="tag status-borderline">pending · borderline</span>
+      <span class="tag lane">icpc</span>
+      <span class="tag lane">safety-curious</span>
+    </div>
+    <p class="roster-intro">
+      Cohesity intern + IITM CSE. Real ICPC team participation. Listed interests: agents, AI safety/security, RL. No public AI artifact.
+    </p>
+    <div class="roster-links">
+      <a href="https://in.linkedin.com/in/sreevasthav-ravirala">linkedin</a>
+    </div>
+    <div class="talk-box">
+      <div class="label">◆ Talk about</div>
+      What does AI safety mean to him concretely — Anthropic mech interp, red-teaming, evals? Any project actually started?
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!--  31-59 GENERAL                       -->
+  <!-- ════════════════════════════════════ -->
+  <h2>General invites — 31 through 59</h2>
+  <p class="small muted">Solid IITM/CS baseline but limited verified frontier-AI signal. Approve broadly; engage selectively in person.</p>
+
+  <div class="roster-compact-grid">
+
+    <!-- 31 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">31</span>
+        <span class="roster-name">Sri Charith Muchala</span>
+        <span class="roster-meta">codex 44 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">Cohesity + IITM CSE, ICPC registration. AI safety/agents interest, no artifact.</p>
+      <p class="talk-line">→ what AI safety project would he build given a free month?</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/sri-charith-muchala-6012902a7">linkedin</a></div>
+    </div>
+
+    <!-- 32 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">32</span>
+        <span class="roster-name">Akshit Singh</span>
+        <span class="roster-meta">codex 43 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">WorldQuant + IITM. Pokerbots/quant activity. RL + efficiency interest, no artifact.</p>
+      <p class="talk-line">→ any RL projects beyond quant? why pokerbots?</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/akshit-singh-7875282aa">linkedin</a></div>
+    </div>
+
+    <!-- 33 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">33</span>
+        <span class="roster-name">Aditya Jain</span>
+        <span class="roster-meta">codex 43 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-approved">approved</span></div>
+      <p class="roster-intro">Programming Club + IITM, high GPA. RL/Multimodal/Agents interest, no public work.</p>
+      <p class="talk-line">→ has he reimplemented any RL paper? which?</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/aditya-jain-92179b25b">linkedin</a></div>
+    </div>
+
+    <!-- 34 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">34</span>
+        <span class="roster-name">Rayapati Yeshaswini</span>
+        <span class="roster-meta">codex 43 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM CSE. Guideily / NVIDIA Inception-adjacent signal. AI lab intent.</p>
+      <p class="talk-line">→ what's Guideily? what's her role?</p>
+      <div class="roster-links">
+        <a href="https://in.linkedin.com/in/yeshaswini-rayapati-4ba461269">linkedin</a>
+        <a href="https://x.com/Yeshaswini1256">x</a>
+      </div>
+    </div>
+
+    <!-- 35 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">35</span>
+        <span class="roster-name">K V Pramodh Kumar</span>
+        <span class="roster-meta">codex 43 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM + Cohesity. GitHub: processor/ALU/DSA coursework. Stated "agentic AI that collaborates with humans not just automates" — right vocabulary.</p>
+      <p class="talk-line">→ first agentic-AI project he'd actually ship?</p>
+      <div class="roster-links">
+        <a href="https://github.com/Bunny37P">github</a>
+        <a href="https://in.linkedin.com/in/pramodh-kothamaddi">linkedin</a>
+      </div>
+    </div>
+
+    <!-- 36 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">36</span>
+        <span class="roster-name">Jaya Vishnavi N</span>
+        <span class="roster-meta">codex 42 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">Goldman Sachs + IITM CSE. Self-stated "planning agents" interest. AI lab intent.</p>
+      <p class="talk-line">→ which planning paper has she actually read — LATS, ReAct, AlphaZero-style?</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/jaya-vishnavi-nichenametla-295b11267">linkedin</a></div>
+    </div>
+
+    <!-- 37 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">37</span>
+        <span class="roster-name">Pranjal Katte</span>
+        <span class="roster-meta">codex 40 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM CSE, E-Cell, quant/trading certification. Agents + efficiency + world models interest. No project.</p>
+      <p class="talk-line">→ quant vs startup vs AI eng — next 12 months?</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/pranjal-katte">linkedin</a></div>
+    </div>
+
+    <!-- 38 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">38</span>
+        <span class="roster-name">Sriram M</span>
+        <span class="roster-meta">codex 39 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">Atlassian + IITM. AI/ML/backend mention only. AI for Science interest, no artifact.</p>
+      <p class="talk-line">→ background-check question; light invite.</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/sriram-makkena-708583260">linkedin</a></div>
+    </div>
+
+    <!-- 39 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">39</span>
+        <span class="roster-name">Yaswanth Sai V</span>
+        <span class="roster-meta">codex 38 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">Likely IITM CSE profile, strong entrance rank. Agents + efficiency interest.</p>
+      <p class="talk-line">→ verify identity, filter on real project.</p>
+      <div class="roster-links">
+        <a href="https://cse.iitm.ac.in/profile.php?arg=Mjg5Mg%3D%3D">iitm cse</a>
+        <a href="https://linkedin.com/in/Yaswanth">linkedin</a>
+      </div>
+    </div>
+
+    <!-- 40 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">40</span>
+        <span class="roster-name">Arjun Ganesh</span>
+        <span class="roster-meta">codex 37 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">AI Club + IITM signal; possible GitHub. RL + inference/compression interest.</p>
+      <p class="talk-line">→ what AI Club project does he actually own?</p>
+      <div class="roster-links">
+        <a href="https://github.com/Arjun2ganesh">github</a>
+        <a href="https://in.linkedin.com/in/arjun-ganesh-6806012a9">linkedin</a>
+      </div>
+    </div>
+
+    <!-- 41 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">41</span>
+        <span class="roster-name">Shivanshu Kumar</span>
+        <span class="roster-meta">codex 37 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-approved">approved</span></div>
+      <p class="roster-intro">Undergraduate researcher signal from X mirrors. AI4Science interest, PhD intent. No output found.</p>
+      <p class="talk-line">→ which lab / project? ask for the paper/preprint draft.</p>
+      <div class="roster-links">
+        <a href="https://linkedin.com/in/shivanshu-kumar-b4814928a">linkedin</a>
+        <a href="https://x.com/shivan123shu">x</a>
+      </div>
+    </div>
+
+    <!-- 42 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">42</span>
+        <span class="roster-name">S Vishal</span>
+        <span class="roster-meta">codex 36 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">Goldman Sachs + IITM. "Need to know about recent developments" — exploratory, not deep. AI lab intent.</p>
+      <p class="talk-line">→ light invite; gauge in-person depth.</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/vishal-senthilkumar-1a2622273">linkedin</a></div>
+    </div>
+
+    <!-- 43 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">43</span>
+        <span class="roster-name">Lekhana</span>
+        <span class="roster-meta">codex 36 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM CSE. GitHub coursework only. RL + multimodal interest.</p>
+      <p class="talk-line">→ any project beyond coursework?</p>
+      <div class="roster-links">
+        <a href="https://github.com/lekhanasodum">github</a>
+        <a href="https://in.linkedin.com/in/lekhanasodum">linkedin</a>
+      </div>
+    </div>
+
+    <!-- 44 -->
+    <div class="roster-compact" data-tier="3">
+      <div class="roster-head">
+        <span class="roster-rank">44</span>
+        <span class="roster-name">Aditya Kumar Sharma</span>
+        <span class="roster-meta">codex 35 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">E-Cell ops + Pfizer programming intern. AI for Science/RL/agents interest. No AI proof.</p>
+      <p class="talk-line">→ Pfizer programming — what stack, what problem?</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/aditya-kumar-sharma-8920132a6">linkedin</a></div>
+    </div>
+
+    <!-- 45 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">45</span>
+        <span class="roster-name">Vaishnavi Rajesh</span>
+        <span class="roster-meta">codex 45 · demoted</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-demoted">demoted ⇩</span></div>
+      <p class="roster-intro">Codex over-promoted on CivicAI-Request-Router — actually 4-file LangGraph tutorial, 1 commit, 0 stars. IITM CSE; AI-for-networks BTP self-stated.</p>
+      <p class="talk-line">→ ask about the BTP. skip the CivicAI thing.</p>
+      <div class="roster-links">
+        <a href="https://github.com/vaishnavi-rajesh">github</a>
+        <a href="https://github.com/vaishnavi-rajesh/CivicAI-Request-Router">civicai repo</a>
+        <a href="https://in.linkedin.com/in/vaishnavi-rajesh-24872027a">linkedin</a>
+      </div>
+    </div>
+
+    <!-- 46 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">46</span>
+        <span class="roster-name">Vikash Kumar Ojha</span>
+        <span class="roster-meta">codex 34 · c</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-verify">verify identity</span></div>
+      <p class="roster-intro">Same-name physics professor has strong research record — likely NOT candidate. Verify identity before considering.</p>
+      <p class="talk-line">→ identity check first; market-prediction interest is vague anyway.</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/vikash-kumar-ojha-515863279">linkedin</a></div>
+    </div>
+
+    <!-- 47 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">47</span>
+        <span class="roster-name">Roshan Manimaran</span>
+        <span class="roster-meta">codex 31 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-demoted">codex hallucinated</span></div>
+      <p class="roster-intro"><strong>Codex claim of Auto-DeepLab/LoRA/RISC-V repos at cs22b053 is FALSE</strong> — actual repos are generic coursework (Reactjs, Chatbot_1, AI_ASSIGNMENT_02). RL/RLHF self-stated interest.</p>
+      <p class="talk-line">→ ask for the actual RL project. don't anchor on codex.</p>
+      <div class="roster-links">
+        <a href="https://in.linkedin.com/in/roshan-m-538065245">linkedin</a>
+        <a href="https://github.com/cs22b053">cs22b053</a>
+      </div>
+    </div>
+
+    <!-- 48 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">48</span>
+        <span class="roster-name">Daksh Sehra</span>
+        <span class="roster-meta">codex 31 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM + Amazon ML learning activity. Little original public proof.</p>
+      <p class="talk-line">→ low priority unless demo.</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/daksh-sehra-353309253">linkedin</a></div>
+    </div>
+
+    <!-- 49 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">49</span>
+        <span class="roster-name">Kishore Kumar E</span>
+        <span class="roster-meta">codex 30 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM CSE listed. Generic agents interest. AI lab intent.</p>
+      <p class="talk-line">→ low priority unless private evidence.</p>
+      <div class="roster-links">
+        <a href="https://in.linkedin.com/in/kishore-kumar-2ab625259">linkedin</a>
+        <a href="https://www.cse.iitm.ac.in/profile.php?arg=MjkzMQ%3D%3D">iitm cse</a>
+      </div>
+    </div>
+
+    <!-- 50 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">50</span>
+        <span class="roster-name">Balla Surya Harshith</span>
+        <span class="roster-meta">codex 30 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">Self-stated NVIDIA system-software job + agentic interest. Not publicly corroborated.</p>
+      <p class="talk-line">→ verify NVIDIA offer; if real, mid-tier-ish.</p>
+      <div class="roster-links"><a href="https://linkedin.com/in/harshith-balla-355199299">linkedin</a></div>
+    </div>
+
+    <!-- 51 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">51</span>
+        <span class="roster-name">Battu Navya Sree</span>
+        <span class="roster-meta">codex 29 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM CSE + possible E-Cell ops. AI safety + formal verification interest. No output.</p>
+      <p class="talk-line">→ formal verification angle = potential Lean bridge if real.</p>
+      <div class="roster-links"><a href="https://linkedin.com/in/navya-sree-b-9a695a258">linkedin</a></div>
+    </div>
+
+    <!-- 52 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">52</span>
+        <span class="roster-name">Abhishek Gurrala</span>
+        <span class="roster-meta">codex 28 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM CSE. AI4Science + RL + agents interest. No frontier-AI proof.</p>
+      <p class="talk-line">→ low priority.</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/abhishek-gurrala-2b1397283">linkedin</a></div>
+    </div>
+
+    <!-- 53 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">53</span>
+        <span class="roster-name">Dev Mehta</span>
+        <span class="roster-meta">codex 28 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-approved">approved</span></div>
+      <p class="roster-intro">"Context graphs" interest articulated well. Possible HF profile, weak attribution. HFT/Quant intent.</p>
+      <p class="talk-line">→ what's a context graph in his framing? has he prototyped one?</p>
+      <div class="roster-links">
+        <a href="https://huggingface.co/devmehta787">possible hf</a>
+        <a href="https://in.linkedin.com/in/dev-mehta-304626250">linkedin</a>
+      </div>
+    </div>
+
+    <!-- 54 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">54</span>
+        <span class="roster-name">Paandu</span>
+        <span class="roster-meta">codex 26 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM CSE. No AI/security/AI4Science artifact.</p>
+      <p class="talk-line">→ low priority.</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/paandu-banoth-4a78a236b">linkedin</a></div>
+    </div>
+
+    <!-- 55 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">55</span>
+        <span class="roster-name">Devi Sumanth Ghanta</span>
+        <span class="roster-meta">codex 26 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-approved">approved</span></div>
+      <p class="roster-intro">IITM CSE. Agents + safety interest. No artifact.</p>
+      <p class="talk-line">→ low priority.</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/sumanth-ghanta-801857268">linkedin</a></div>
+    </div>
+
+    <!-- 56 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">56</span>
+        <span class="roster-name">Anjali Samudrala</span>
+        <span class="roster-meta">codex 26 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">Codeforces + IITM signal; LinkedIn masked. AI safety interest. No artifact.</p>
+      <p class="talk-line">→ why the masked LinkedIn? verify the Codeforces handle is hers.</p>
+      <div class="roster-links">
+        <a href="https://in.linkedin.com/in/anjali-samudrala-xxxx2106">linkedin</a>
+        <a href="https://codeforces.com/profile/anjali21">codeforces</a>
+      </div>
+    </div>
+
+    <!-- 57 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">57</span>
+        <span class="roster-name">Riddhi</span>
+        <span class="roster-meta">codex 26 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-approved">approved</span></div>
+      <p class="roster-intro">IITM CSE. RL + agents interest. No artifact.</p>
+      <p class="talk-line">→ low priority.</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/riddhi-agarwal-bb839025a">linkedin</a></div>
+    </div>
+
+    <!-- 58 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">58</span>
+        <span class="roster-name">Jwala Likhitha Reddy M.</span>
+        <span class="roster-meta">codex 25 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-borderline">pending</span></div>
+      <p class="roster-intro">IITM CSE. Multimodal interest. No artifact.</p>
+      <p class="talk-line">→ low priority.</p>
+      <div class="roster-links"><a href="https://in.linkedin.com/in/jwala-likhitha-mandalapu-275739268">linkedin</a></div>
+    </div>
+
+    <!-- 59 -->
+    <div class="roster-compact" data-tier="low">
+      <div class="roster-head">
+        <span class="roster-rank">59</span>
+        <span class="roster-name">Aditya Srivastava</span>
+        <span class="roster-meta">codex 22 · low</span>
+      </div>
+      <div class="roster-tags"><span class="tag status-approved">approved</span></div>
+      <p class="roster-intro">Identity could not be corroborated. Formal verification + AI4Science + safety interest stated.</p>
+      <p class="talk-line">→ verify identity first.</p>
+      <div class="roster-links"><a href="https://linkedin.com/in/aditya-srivastava-028137260">linkedin</a></div>
+    </div>
+
+  </div>
+
+  <!-- ════════════════════════════════════ -->
+  <!--  METHODOLOGY                         -->
+  <!-- ════════════════════════════════════ -->
+  <h2>Methodology notes</h2>
+
+  <h3>What was verified</h3>
+  <ul>
+    <li><strong>All 7 top-tier arXiv papers checked at source</strong> — codex did NOT hallucinate any. IDs and authors confirmed.</li>
+    <li><strong>Jay Gupta's DeepMind claim confirmed</strong> via Google's LinkedIn snippet — biggest single ranking move (rank 9 → 4).</li>
+    <li><strong>Vaibhav Shivrain's Sinha Lab DDP role confirmed</strong> on the IITM lab people page — upgrade from B-tier to A-tier.</li>
+    <li><strong>Akshay Govind's physics foundation models work confirmed</strong> via his personal site, NeurIPS 2025 workshop reference, and arXiv. Moved to rank 1 for the model-layer thesis.</li>
+  </ul>
+
+  <h3>What codex got wrong</h3>
+  <ul>
+    <li><strong>cs22b053 GitHub repos (Roshan) — hallucinated.</strong> Codex claimed Auto-DeepLab/LoRA/RISC-V; actual repos are coursework. Do not promote on codex's "second-pass" GitHub finds without checking the URL first.</li>
+    <li><strong>CivicAI-Request-Router (Vaishnavi)</strong> exists but is a 4-file LangGraph tutorial, not a "missed agentic-AI-adjacent project." Sophistication claim inflated.</li>
+    <li><strong>Naveen Chavali's "Linux-capable RISC-V SoC"</strong> not visible on his public GitHub. Either private or overstated. Verify live.</li>
+    <li><strong>Karthik Cheripelly "building Gaara AI"</strong> — codex took LinkedIn at face value; Gaara AI's site doesn't list him.</li>
+    <li><strong>Achintya Jai framed as "AI safety builder"</strong> — public artifacts are all classical cybersec / OSINT. His formal-verification interest is the actual bridge to the Lean tax-law portfolio company.</li>
+  </ul>
+
+  <h3>Pending → approve recommendations</h3>
+  <ul>
+    <li><strong>Strongly approve:</strong> Vaibhav Shivrain (#7), Madhav Bhardwaj (#9), Shanmukh raj MSS (#11), Vignesh Gaikoti (#17), Rohan Kadam (#24).</li>
+    <li><strong>Approve if seats:</strong> Sharmil Kumar Basa (#13), Tallapaneni Subhash Ram (#18), Mahandeep Parida (#16).</li>
+    <li><strong>Approve if room:</strong> Sai Srikar (#23), Harsh Vardhan Daga (#26), Vibhav Kanakamedala (#27), Rohan Bagati (#28), Sreevasthav Ravirala (#30).</li>
+  </ul>
+
+  <footer>
+    Source &middot; codex frontier_ai_full_ranked_report.md &middot; verification audit 2026-05-13 &middot; ood digital garden style
+  </footer>
+
 </body>
 </html>
